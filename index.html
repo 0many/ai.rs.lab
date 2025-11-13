@@ -44,45 +44,50 @@
       }
     </style>
 <script>
-      // 우클릭 방지 (이미지에만 적용)
-      document.addEventListener('contextmenu', function(e) {
-        if (e.target.tagName === 'IMG') {
-          e.preventDefault();
-          return false;
-        }
-      });
-      
-      // 드래그 방지
-      document.addEventListener('dragstart', function(e) {
-        if (e.target.tagName === 'IMG') {
-          e.preventDefault();
-          return false;
-        }
-      });
-      
-      // 키보드 단축키로 저장 방지 (Ctrl+S)
-      document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && e.key === 's') {
-          e.preventDefault();
-          return false;
-        }
-      });
-      
-      // 이미지에만 우클릭 방지
+      // 전체 페이지 우클릭 및 드래그 방지
       document.addEventListener('DOMContentLoaded', function() {
-        document.addEventListener('contextmenu', function(e) {
+        // 우클릭 방지
+        document.body.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, false);
+        
+        // 드래그 방지
+        document.body.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, false);
+        
+        // 선택 방지 (이미지만)
+        document.body.addEventListener('selectstart', function(e) {
           if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            return false;
+          }
+        }, false);
+        
+        // 키보드 단축키로 저장 방지 (Ctrl+S)
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && e.key === 's') {
             e.preventDefault();
             return false;
           }
         });
         
-        document.addEventListener('dragstart', function(e) {
-          if (e.target.tagName === 'IMG') {
+        // 모든 이미지에 추가 보호
+        const images = document.getElementsByTagName('img');
+        for (let i = 0; i < images.length; i++) {
+          images[i].addEventListener('contextmenu', function(e) {
             e.preventDefault();
             return false;
-          }
-        });
+          });
+          images[i].addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+          });
+        }
       });
     </script>
 </head>
