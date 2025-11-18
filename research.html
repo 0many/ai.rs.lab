@@ -1,39 +1,97 @@
 <!DOCTYPE html>
-
 <html class="" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ai.rs.lab - Interpreting the Earth and Predicting the Future with AI</title>
+<title>Research - ai.rs.lab</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#003366",
-                        "background-light": "#f5f7f8",
-                        "background-dark": "#0f1923",
-                        "accent": "#00AEEF"
-                    },
-                    fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                },
-            },
-        }
-    </script>
 <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      
+      .segmented-control {
+          display: flex;
+          gap: 0.25rem;
+      } 
+      
+      .segmented-control a {
+          flex: 1 1 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+          font-size: 0.9375rem;
+          transition: all 0.2s ease-in-out;
+          color: #e2e8f0;
+          white-space: nowrap;
+          min-width: 0;
+      }
+      
+      .dark .segmented-control a {
+          color: #e2e8f0;
+      }
+      
+      .segmented-control a:first-child {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+      }
+      
+      .segmented-control a:last-child {
+          border-top-right-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+      }
+      
+      .segmented-control a:hover {
+          color: #00AEEF;
+          z-index: 1;
+          position: relative;
+      }
+      
+      .dark .segmented-control a:hover {
+          color: #00AEEF;
+          z-index: 1;
+          position: relative;
+      }
+      
+      .segmented-control a.active {
+          color: #00AEEF;
+          box-shadow: none;
+          z-index: 2;
+          position: relative;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          text-decoration-thickness: 2px;
+          text-decoration-color: #00AEEF;
+      }
+      
+      .dark .segmented-control a.active {
+          color: #00AEEF;
+          box-shadow: none;
+          text-decoration-color: #00AEEF;
+      }
+      
+      .segmented-control a.active .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1;
+          color: #00AEEF;
+      }
+      
+      .dark .segmented-control a.active .material-symbols-outlined {
+          color: #00AEEF;
+      }
+      
+      /* 섹션 기본 숨김 처리 */
+      section[id] {
+          display: none;
+      }
+      
       /* 이미지 보호 */
       img {
           pointer-events: none;
@@ -42,8 +100,128 @@
           -moz-user-select: none;
           -ms-user-select: none;
       }
+      
+      /* Research 이미지 카드 호버 효과 */
+      .research-card {
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          text-decoration: none;
+          display: block;
+      }
+      
+      .research-card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+      
+      .research-card:focus {
+          outline: none;
+      }
     </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#003366",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0f1923",
+              "primary-dark": "#0a2342",
+              "secondary": "#5d737e",
+              "accent": "#00AEEF",
+              "card-light": "#ffffff",
+              "card-dark": "#1a2c3e",
+              "text-light": "#0f172a",
+              "text-dark": "#e2e8f0",
+              "text-muted-light": "#5d737e",
+              "text-muted-dark": "#94a3b8",
+            },
+            fontFamily: {
+              "display": ["Lexend", "Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
 <script>
+      // 페이지 로드 시 스크롤 자동 복원 방지
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      
+      // 페이지 로드 전에 스크롤 방지
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+      
+      // 즉시 스크롤을 맨 위로
+      window.scrollTo(0, 0);
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // 모든 섹션과 탭 가져오기
+        const sections = document.querySelectorAll('section[id]');
+        const tabs = document.querySelectorAll('.segmented-control a');
+        
+        function showSection(hash) {
+          // 해시가 없으면 기본값으로 research-Area 표시
+          const targetHash = hash || '#research-area';
+          
+          // 모든 섹션 숨기기
+          sections.forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // 선택된 섹션만 보이기
+          const targetSection = document.querySelector(targetHash);
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+          
+          // 탭 active 클래스 업데이트
+          tabs.forEach(tab => {
+            if (tab.getAttribute('href') === targetHash) {
+              tab.classList.add('active');
+            } else {
+              tab.classList.remove('active');
+            }
+          });
+          
+          // 스크롤 방지 - 페이지 상단 고정
+          window.scrollTo(0, 0);
+        }
+        
+        // URL에서 해시 제거 (스크롤 방지)
+        const currentHash = window.location.hash;
+        if (currentHash) {
+          // 해시만 제거하고 URL 업데이트
+          history.replaceState(null, null, window.location.pathname + window.location.search);
+        }
+        
+        // 초기 로드
+        showSection(currentHash || '');
+        
+        // 탭 클릭 이벤트
+        tabs.forEach(tab => {
+          tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hash = tab.getAttribute('href');
+            
+            // URL 업데이트 (해시 포함)
+            history.pushState(null, null, hash);
+            
+            // 섹션 표시
+            showSection(hash);
+          });
+        });
+        
+        // 브라우저 뒤로가기/앞으로가기 지원
+        window.addEventListener('popstate', () => {
+          showSection(window.location.hash);
+        });
+      });
+      
       // 전체 페이지 우클릭 및 드래그 방지
       document.addEventListener('DOMContentLoaded', function() {
         // 우클릭 방지
@@ -92,8 +270,7 @@
     </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-[#101418] dark:text-background-light" oncontextmenu="return false;" ondragstart="return false;">
-<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <header class="sticky top-0 z-50 flex justify-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
 <div class="flex items-center justify-between px-4 sm:px-6 py-3 w-full" style="max-width: 95%;">
 <a href="index.html" class="flex items-center gap-2 text-primary dark:text-white flex-shrink-0">
@@ -103,7 +280,7 @@
 <nav class="hidden lg:block mega-menu-nav group relative flex-1 flex justify-start" style="max-width: 1200px;">
 <div style="display: grid; grid-template-columns: repeat(6, 1fr);" id="main-nav">
 <a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="about.html">About ai.rs</a>
-<a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="research.html">Research</a>
+<a class="nav-link text-accent dark:text-accent text-2xl font-bold leading-normal pt-2 pb-0 text-center" href="research.html">Research</a>
 <a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="professor.html">Professor</a>
 <a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="people.html">Members</a>
 <a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="publications.html">Publications</a>
@@ -163,7 +340,7 @@
 </div>
 <nav class="flex flex-col p-6 gap-2">
 <a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="about.html">About ai.rs</a>
-<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="research.html">Research</a>
+<a class="mobile-nav-link text-accent dark:text-accent text-lg font-bold py-3 border-b border-gray-200 dark:border-gray-700" href="research.html">Research</a>
 <a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="professor.html">Professor</a>
 <div class="mobile-nav-group">
 <button class="mobile-nav-toggle w-full flex items-center justify-between text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700">
@@ -241,110 +418,46 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<main class="flex flex-col items-center">
-<div class="w-full">
-<div class="@container">
-<div class="flex min-h-[480px] lg:min-h-[600px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 text-center" data-alt="Satellite image of Earth from space with glowing data points" style='background-image: linear-gradient(rgba(0, 20, 40, 0.4) 0%, rgba(0, 51, 102, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAF9kgyC6ga3LsgT18d595AskEq6lowJKAB7kOD2K1xvWXt1esl7U5AVT5Qf72xVjLWJadArs46xXCkPByen_pKJnN2vyBYfgVk77x0p0ClppVE_vO2mbH1wAy0hGFncXl8ScD2OX93GkoovqEieGxnnRijnZmNx-EPczod20pp6r801rSameeRI2Kgej9PgUFj-iL4OoN0X2JvrSNya-_Lm4vc2GIx_aQy0Mejvf5x1AuwjYza-Oe-_lOl_J2HnanH9QhCy8fGK5o");'>
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">ai.rs.lab</h1>
-<h2 class="text-white text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal max-w-2xl">Interpreting the Earth and Predicting the Future with AI.</h2>
-<div class="flex-wrap gap-3 flex justify-center mt-4">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
-<span class="truncate">Our Research</span>
-</button>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light/90 dark:bg-background-dark/80 text-[#101418] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-100 dark:hover:bg-opacity-100 transition-colors">
-<span class="truncate">Contact Us</span>
-</button>
+<div class="relative w-full overflow-hidden bg-gradient-to-b from-blue-100 to-white dark:from-primary-dark dark:to-background-dark" style="height: 385px;">
+<img alt="Space background" class="absolute inset-0 w-full h-full object-cover pointer-events-none" src="space/1.png"/>
+<div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+<div class="relative z-10 flex flex-col items-center justify-center" style="height: 328px;">
+<div class="text-center px-4">
+<p class="text-5xl md:text-6xl font-black leading-tight tracking-[-0.03em] text-white">Research</p>
+</div>
+</div>
+<div class="relative z-10 border-b border-gray-200 dark:border-gray-700 bg-black/60 dark:bg-black/60" style="height: 57px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+<nav aria-label="Research Tabs" class="segmented-control flex justify-center max-w-5xl mx-auto w-full">
+<a class="group py-2.5" href="#research-area">Research Area</a>
+</nav>
 </div>
 </div>
 </div>
-</div>
-<div class="layout-content-container flex flex-col max-w-6xl w-full flex-1 px-4 py-10 sm:px-6 md:px-8 md:py-16">
-<section>
-<h2 class="text-[#101418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 text-center">Research Areas</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">We are focused on developing cutting-edge AI technologies to analyze geospatial data, enhancing our understanding of the planet and enabling predictive capabilities for a sustainable future.</p>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex-col hover:shadow-lg hover:border-accent dark:hover:border-accent transition-all">
-<span class="material-symbols-outlined text-accent" style="font-size: 32px;">public</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-[#101418] dark:text-white text-lg font-bold leading-tight">AI for Geospatial Intelligence</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Developing advanced AI models to extract actionable intelligence from satellite imagery, enabling smarter decision-making in various sectors.</p>
-</div>
-</div>
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex-col hover:shadow-lg hover:border-accent dark:hover:border-accent transition-all">
-<span class="material-symbols-outlined text-accent" style="font-size: 32px;">fullscreen</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-[#101418] dark:text-white text-lg font-bold leading-tight">Satellite Image Super-Resolution</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Enhancing the resolution and quality of satellite images using deep learning techniques, unlocking new levels of detail and analysis.</p>
-</div>
-</div>
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex-col hover:shadow-lg hover:border-accent dark:hover:border-accent transition-all">
-<span class="material-symbols-outlined text-accent" style="font-size: 32px;">eco</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-[#101418] dark:text-white text-lg font-bold leading-tight">Environmental Monitoring</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Utilizing AI to monitor environmental changes, from deforestation and climate impact to urban sprawl and agricultural trends.</p>
-</div>
-</div>
+<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 py-12">
+<div class="flex flex-col gap-12">
+<div class="flex-1">
+<section id="research-area">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Research Area</h2>
+<div class="max-w-4xl mx-auto flex justify-center items-center gap-6">
+<a href="#" class="research-card relative">
+<img src="area/remote sensing3_logox.png" alt="Remote Sensing" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+<p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">Remote Sensing</p>
+</a>
+<a href="#" class="research-card relative">
+<img src="area/ai2_logox.jpg" alt="AI" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+<p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">AI-based<br/>Environmental<br/>Monitoring</p>
+</a>
+<a href="#" class="research-card relative">
+<img src="area/test_logox.png" alt="Geospatial Data Fusion" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
+<div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+<p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">Geospatial Data Fusion(test)</p>
+</a>
 </div>
 </section>
-<section class="mt-16">
-<h2 class="text-[#101418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 text-center">Latest Research Highlights</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">Discover our latest publications and contributions to the field of AI and remote sensing.</p>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group">
-<img class="h-48 w-full object-cover" data-alt="Visualization of neural network connections over a satellite map background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfiCfjTmzgOF43mnXsDPVFssgAgIOokNA3S_gKG5y5WtHWXqLxilDZa-gDPZkgQ9q1ayvLgCog-zTpM3m7SRGfQ7Ul7qQQQT2m54u79H-4e-Wew2xaUOdfqwsX7IrPrWH0yv3zWONRb_rHIep5xZOSfXJjPyVQIqK-R1fftMOZqpVRFzZtFWAw3cWt-tCMde8F-azEq4hhR5CLwiVDt0sv-TEo4OIqZpSnlakRyo7W6ZQrpBDDD6j64eut0a5CyU9wVa-EqVDChPs"/>
-<div class="p-6 flex flex-col flex-1">
-<h3 class="text-lg font-bold text-[#101418] dark:text-white">Self-Supervised Learning for Change Detection</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex-1">A novel framework for detecting changes in satellite imagery without labeled data, improving scalability and efficiency.</p>
-<a class="mt-4 text-sm font-bold text-accent group-hover:underline" href="#">Read More →</a>
 </div>
-</div>
-<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group">
-<img class="h-48 w-full object-cover" data-alt="Abstract 3D rendering of complex data structures and nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHfgHMKnWWsv6_11FCJDt9CUe8JL47eJ4XbKUIa1As5LGoq9DbS491zyGD4YLwCbs5uRoOmkmiNS0elk-PUC7uJaBbhvma6AxlgywFLtmaxpzh4O-_5LncUzFA6qbC6q_TKHXMc-FSlmIivar4KohbMcPECMKHq75RLdzHNN4gc3uDcqFHuFVvmWRj5HqjeiX49rUx-tSF9TYnKnF9D-gOHl8NR5Gemkpsw0Y9drPzU63hQDM3LzxNRCZpLaKcQKWr-oD1YhZgeAw"/>
-<div class="p-6 flex flex-col flex-1">
-<h3 class="text-lg font-bold text-[#101418] dark:text-white">Generative Models for High-Resolution Synthesis</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex-1">This paper introduces a diffusion-based model capable of generating photo-realistic high-resolution satellite imagery from low-resolution inputs.</p>
-<a class="mt-4 text-sm font-bold text-accent group-hover:underline" href="#">Read More →</a>
-</div>
-</div>
-<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group">
-<img class="h-48 w-full object-cover" data-alt="A combine harvester working in a vast agricultural field, seen from above" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaivgLNM_96CYL0qaG-_qiJZNkMY7npQ7mT6lVkGABbVIQ9SxUDIt1RsCV7KGpj4D_Hkwz8IuJmaqpCnE5emHSIKSNeSjHwvGgEWmSJnQp9QtFt-4BeFMZ6yQoCZdqz4Fj4Mx5iph7BSz8KHRthC51bG5_mcu8u-8-ywdbV-jH7SmL_LCS-aQEVC9ea9hgXcr4hUfKsdM96TbBnFQ13PpGgmHraIZZODVQGHQJANcwjnxv5IL39fteg_RqcmcEwSa2C-NKZ7lUIMA"/>
-<div class="p-6 flex flex-col flex-1">
-<h3 class="text-lg font-bold text-[#101418] dark:text-white">AI-Powered Crop Yield Prediction</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex-1">Leveraging multi-spectral satellite data and recurrent neural networks to accurately predict crop yields for food security monitoring.</p>
-<a class="mt-4 text-sm font-bold text-accent group-hover:underline" href="#">Read More →</a>
-</div>
-</div>
-</div>
-</section>
-<section class="mt-16">
-<h2 class="text-[#101418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 text-center">News & Announcements</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">Stay up to date with our lab's latest achievements, events, and milestones.</p>
-<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-<ul class="divide-y divide-gray-200 dark:divide-gray-700">
-<li class="p-4 sm:p-6 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-<a class="flex flex-col sm:flex-row gap-2 sm:gap-4" href="#">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400 w-full sm:w-32 flex-shrink-0">October 26, 2023</p>
-<h3 class="font-semibold text-[#101418] dark:text-white">Paper accepted at NeurIPS 2023</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto flex-shrink-0">Read More</p>
-</a>
-</li>
-<li class="p-4 sm:p-6 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-<a class="flex flex-col sm:flex-row gap-2 sm:gap-4" href="#">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400 w-full sm:w-32 flex-shrink-0">September 15, 2023</p>
-<h3 class="font-semibold text-[#101418] dark:text-white">Dr. Lee awarded the prestigious "Future AI" grant</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto flex-shrink-0">Read More</p>
-</a>
-</li>
-<li class="p-4 sm:p-6 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-<a class="flex flex-col sm:flex-row gap-2 sm:gap-4" href="#">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400 w-full sm:w-32 flex-shrink-0">August 01, 2023</p>
-<h3 class="font-semibold text-[#101418] dark:text-white">Welcoming new PhD students to the lab</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto flex-shrink-0">Read More</p>
-</a>
-</li>
-</ul>
-</div>
-</section>
 </div>
 </main>
 <footer class="bg-primary text-white">
@@ -375,5 +488,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </footer>
 </div>
-</div>
 </body></html>
+
