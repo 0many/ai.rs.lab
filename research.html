@@ -106,16 +106,59 @@
           transition: all 0.3s ease-in-out;
           cursor: pointer;
           text-decoration: none;
-          display: block;
+          display: inline-block;
       }
       
       .research-card:hover {
           transform: scale(1.05);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      }
+      
+      .research-card .gradient-overlay {
+          transition: background 0.3s ease-in-out;
+      }
+      
+      .research-card:hover .gradient-overlay {
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent);
       }
       
       .research-card:focus {
           outline: none;
+      }
+      
+      .research-card .view-more {
+          position: absolute;
+          bottom: 1.75rem;
+          left: 1.75rem;
+          padding: 0.45rem 1.5rem;
+          border-radius: 9999px;
+          border: 1px solid rgba(255, 255, 255, 0.6);
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          background: rgba(255, 255, 255, 0.15);
+          transition: all 0.25s ease;
+          backdrop-filter: blur(6px);
+          font-family: Georgia, serif;
+      }
+      
+      .research-card:hover .view-more {
+          background: rgba(0, 174, 239, 0.9);
+          border-color: rgba(0, 174, 239, 0.9);
+          color: #0f172a;
+      }
+      
+      .research-card p {
+          z-index: 10;
+      }
+      
+      .research-card .view-more {
+          z-index: 10;
+      }
+      
+      .research-card .gradient-overlay {
+          z-index: 1;
       }
     </style>
 <script id="tailwind-config">
@@ -440,20 +483,23 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="research-area">
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Research Area</h2>
 <div class="max-w-4xl mx-auto flex justify-center items-center gap-6">
-<a href="#" class="research-card relative">
+<a href="1_research.html#remote-sensing" class="research-card relative">
 <img src="area/remote sensing3_logox.png" alt="Remote Sensing" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
-<div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+<div class="gradient-overlay absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 <p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">Remote Sensing</p>
+<span class="view-more pointer-events-none">View More</span>
 </a>
-<a href="#" class="research-card relative">
+<a href="2_research.html#ai-monitoring" class="research-card relative">
 <img src="area/ai2_logox.jpg" alt="AI" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
-<div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+<div class="gradient-overlay absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 <p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">AI-based<br/>Environmental<br/>Monitoring</p>
+<span class="view-more pointer-events-none">View More</span>
 </a>
-<a href="#" class="research-card relative">
+<a href="3_research.html#geospatial-fusion" class="research-card relative">
 <img src="area/test_logox.png" alt="Geospatial Data Fusion" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
-<div class="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
+<div class="gradient-overlay absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
 <p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">Geospatial Data Fusion(test)</p>
+<span class="view-more pointer-events-none">View More</span>
 </a>
 </div>
 </section>
