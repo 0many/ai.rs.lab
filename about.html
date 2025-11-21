@@ -7,6 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="globals.css" />
+<link rel="stylesheet" href="style.css" />
 <style>
       .material-symbols-outlined {
         font-variation-settings:
@@ -254,63 +256,61 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-[#101418] dark:text-background-light" oncontextmenu="return false;" ondragstart="return false;">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<header class="sticky top-0 z-50 flex justify-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-<div class="flex items-center justify-between px-4 sm:px-6 py-3 w-full" style="max-width: 95%;">
-<a href="index.html" class="flex items-center gap-2 text-primary dark:text-white flex-shrink-0">
-<img src="logo/lab_logo_orbitron_black.png" alt="AI.RS Lab logo" class="h-20 w-auto object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
-</a>
+<header class="header sticky top-0 z-50">
+<div class="container">
+<div class="frame">
+<a href="index.html" class="link-AI-RS-lab-logo"></a>
 <!-- Desktop Navigation -->
-<nav class="hidden lg:block mega-menu-nav group relative flex-1 flex justify-start" style="max-width: 1200px;">
-<div style="display: grid; grid-template-columns: repeat(6, 1fr);" id="main-nav">
-<a class="nav-link text-accent dark:text-accent text-2xl font-bold leading-normal pt-2 pb-0 text-center" href="about.html">About ai.rs</a>
-<a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="research.html">Research</a>
-<a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="professor.html">Professor</a>
-<a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="people.html">Members</a>
-<a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="publications.html">Publications</a>
-<a class="nav-link text-[#101418] dark:text-white text-2xl font-medium leading-normal hover:text-accent dark:hover:text-accent transition-colors pt-2 pb-0 text-center" href="news.html">News</a>
-</div>
+<nav class="navbar hidden lg:block mega-menu-nav group relative">
+<a class="text-wrapper nav-link" href="about.html">About ai.rs</a>
+<a class="div nav-link" href="research.html">Research</a>
+<a class="text-wrapper-2 nav-link" href="professor.html">Professor</a>
+<a class="div nav-link" href="people.html">Members</a>
+<a class="text-wrapper-3 nav-link" href="publications.html">Publications</a>
+<a class="text-wrapper-4 nav-link" href="news.html">News</a>
 <!-- Mega Menu Dropdown -->
-<div class="mega-dropdown absolute top-full mt-6 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300" style="left: 50%; transform: translateX(-50%); width: 1200px;">
-<div class="py-1">
-<div style="display: grid; grid-template-columns: repeat(6, 1fr);">
+<div class="mega-dropdown">
+<div>
+<div>
 <!-- About Column -->
-<div class="flex flex-col items-center text-center">
-<a href="about.html#about" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">About Us</a>
-<a href="about.html#contact" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Contact</a>
+<div>
+<a href="about.html#about">About Us</a>
+<a href="about.html#contact">Contact</a>
 </div>
 <!-- Research Column -->
-<div class="flex flex-col items-center text-center">
-<a href="research.html#research-area" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Research Area</a>
+<div>
+<a href="research.html#research-area">Research Area</a>
 </div>
 <!-- Professor Column -->
-<div class="flex flex-col items-center text-center">
-<a href="professor.html" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Professor</a>
+<div>
+<a href="professor.html">Professor</a>
 </div>
 <!-- Members Column -->
-<div class="flex flex-col items-center text-center">
-<a href="people.html#researchers" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Researchers</a>
-<a href="people.html#phd-students" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Ph.D. Course</a>
-<a href="people.html#masters-students" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">M.S. Course</a>
-<a href="people.html#undergrad-researchers" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Undergraduate Students</a>
-<a href="people.html#alumni" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Alumni</a>
+<div>
+<a href="people.html#researchers">Researchers</a>
+<a href="people.html#phd-students">Ph.D. Course</a>
+<a href="people.html#masters-students">M.S. Course</a>
+<a href="people.html#undergrad-researchers">Undergraduate<br>Students</a>
+<a href="people.html#alumni">Alumni</a>
 </div>
 <!-- Publications Column -->
-<div class="flex flex-col items-center text-center">
-<a href="publications.html#journal" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Journal</a>
-<a href="publications.html#patent" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">Patent</a>
+<div>
+<a href="publications.html#journal">Journal</a>
+<a href="publications.html#patent">Patent</a>
 </div>
 <!-- News Column -->
-<div class="flex flex-col items-center text-center">
-<a href="news.html" class="block py-2 text-sm text-[#101418] dark:text-white hover:text-accent transition-colors whitespace-nowrap">News</a>
+<div>
+<a href="news.html">News</a>
 </div>
 </div>
 </div>
 </div>
 </nav>
 <!-- Mobile Menu Button -->
-<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent dark:hover:text-accent transition-colors">
+<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent dark:hover:text-accent transition-colors" style="position: absolute; right: 20px;">
 <span class="material-symbols-outlined">menu</span>
 </button>
+</div>
 </div>
 <!-- Mobile Navigation -->
 <div id="mobile-menu" class="mobile-menu lg:hidden fixed inset-0 bg-black/50 z-50 opacity-0 invisible transition-all duration-300">
@@ -485,31 +485,19 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 </main>
-<footer class="bg-primary text-white">
-<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-<div class="md:col-span-2">
-<img src="logo/lab_logo_orbitron_white.png" alt="ai.rs.lab logo" class="h-20 w-auto" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
-<h4 class="mt-4 font-semibold tracking-wider uppercase">Address</h4>
-<p class="mt-2 text-sm text-gray-300">부산광역시 남구 용소로 45, 환경해양관(B14) 613호</p>
-<p class="mt-1 text-sm text-gray-300 whitespace-nowrap">Pukyong National University B14, Room 613, 45 Yongso-ro, Nam-gu, Busan 48513, Republic of Korea</p>
-<h4 class="mt-4 font-semibold tracking-wider uppercase">Contact</h4>
-<p class="mt-2 text-sm text-gray-300">modconfi@pknu.ac.kr</p>
+<footer class="footer">
+<div class="container">
+<div class="ai-rs-lab-logo"></div>
+<div class="frame">
+<div class="heading-address">ADDRESS</div>
+<p class="text-wrapper">부산광역시 남구 용소로 45, 환경해양관(B14) 613호, 인공지능 원격탐사 연구실</p>
+<p class="text-wrapper">Pukyong National University B14, Room 613, 45 Yongso-ro, Nam-gu, Busan 48513, Republic of Korea</p>
 </div>
-<div></div>
-<div>
-<h4 class="font-semibold tracking-wider uppercase">Links</h4>
-<ul class="mt-4 space-y-2 text-sm">
-<li><a class="hover:text-accent transition-colors" href="research.html">Research</a></li>
-<li><a class="hover:text-accent transition-colors" href="publications.html">Publications</a></li>
-<li><a class="hover:text-accent transition-colors" href="people.html">Members</a></li>
-<li><a class="hover:text-accent transition-colors" href="#">University Page</a></li>
-</ul>
+<div class="div">
+<div class="heading-contact">CONTACT</div>
+<div class="text-wrapper-2">modconfi@pknu.ac.kr</div>
 </div>
-</div>
-<div class="mt-8 border-t border-blue-800 pt-6 text-center text-sm text-gray-400">
-<p>© 2024 ai.rs.lab. All Rights Reserved.</p>
-</div>
+<div class="horizontal-border"><p class="p">© 2024 ai.rs.lab. All Rights Reserved.</p></div>
 </div>
 </footer>
 </div>
