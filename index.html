@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <link rel="stylesheet" href="globals.css" />
 <link rel="stylesheet" href="style.css" />
@@ -96,10 +98,10 @@
 <body class="bg-background-light dark:bg-background-dark font-display text-[#101418] dark:text-background-light" oncontextmenu="return false;" ondragstart="return false;">
 <div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<header class="header sticky top-0 z-50">
+<header class="header header-home sticky top-0 z-50">
 <div class="container">
 <div class="frame">
-<a href="index.html" class="link-AI-RS-lab-logo"></a>
+<a href="index.html" class="link-AI-RS-lab-logo" style="background-image: url('./logo/lab_logo_orbitron_white.png');"></a>
 <!-- Desktop Navigation -->
 <nav class="navbar hidden lg:block mega-menu-nav group relative">
 <a class="text-wrapper nav-link" href="about.html">About ai.rs</a>
@@ -245,108 +247,90 @@ document.addEventListener('DOMContentLoaded', function() {
 <main class="flex flex-col items-center">
 <div class="w-full">
 <div class="@container">
-<div class="flex min-h-[480px] lg:min-h-[600px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 text-center" data-alt="Satellite image of Earth from space with glowing data points" style='background-image: linear-gradient(rgba(0, 20, 40, 0.4) 0%, rgba(0, 51, 102, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAF9kgyC6ga3LsgT18d595AskEq6lowJKAB7kOD2K1xvWXt1esl7U5AVT5Qf72xVjLWJadArs46xXCkPByen_pKJnN2vyBYfgVk77x0p0ClppVE_vO2mbH1wAy0hGFncXl8ScD2OX93GkoovqEieGxnnRijnZmNx-EPczod20pp6r801rSameeRI2Kgej9PgUFj-iL4OoN0X2JvrSNya-_Lm4vc2GIx_aQy0Mejvf5x1AuwjYza-Oe-_lOl_J2HnanH9QhCy8fGK5o");'>
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">ai.rs.lab</h1>
-<h2 class="text-white text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal max-w-2xl">Interpreting the Earth and Predicting the Future with AI.</h2>
-<div class="flex-wrap gap-3 flex justify-center mt-4">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-accent text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
-<span class="truncate">Our Research</span>
-</button>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-background-light/90 dark:bg-background-dark/80 text-[#101418] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-100 dark:hover:bg-opacity-100 transition-colors">
-<span class="truncate">Contact Us</span>
-</button>
+<div
+  class="flex flex-col gap-6 items-start justify-center p-4"
+  data-alt="Space background"
+  style='background-image: url("space/1.png"); background-size: cover; background-repeat: no-repeat; background-position: left top; height: calc(88vh + 105px); width: 100vw; margin-left: calc(50% - 50vw); margin-top:-105px; padding-top:105px;'
+>
+<div class="w-full mx-auto px-4 sm:px-6 lg:px-8" style="max-width:1920px; padding-left:168px; margin-top:-130px;">
+<div class="max-w-5xl">
+<p class="text-white text-3xl md:text-[4.5rem] lg:text-[4.5rem] font-bold leading-tight text-left" style="font-family: 'Orbitron', system-ui, sans-serif;">
+<span style="color:#00AEEF;">A</span>rtificial <span style="color:#00AEEF;">I</span>ntelligence &
+</p>
+<p class="text-white text-3xl md:text-[4.5rem] lg:text-[4.5rem] font-bold leading-tight text-left mt-1" style="font-family: 'Orbitron', system-ui, sans-serif;">
+<span style="color:#00AEEF;">R</span>emote <span style="color:#00AEEF;">S</span>ensing
+</p>
+<p class="text-white text-3xl md:text-[4.5rem] lg:text-[4.5rem] font-bold leading-tight text-left mt-2" style="font-family: 'Orbitron', system-ui, sans-serif;">
+<span style="color:#00AEEF;">Lab</span>oratory
+</p>
 </div>
 </div>
 </div>
 </div>
-<div class="layout-content-container flex flex-col max-w-6xl w-full flex-1 px-4 py-10 sm:px-6 md:px-8 md:py-16">
-<section>
-<h2 class="text-[#101418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 text-center">Research Areas</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">We are focused on developing cutting-edge AI technologies to analyze geospatial data, enhancing our understanding of the planet and enabling predictive capabilities for a sustainable future.</p>
-<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6">
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex-col hover:shadow-lg hover:border-accent dark:hover:border-accent transition-all">
-<span class="material-symbols-outlined text-accent" style="font-size: 32px;">public</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-[#101418] dark:text-white text-lg font-bold leading-tight">AI for Geospatial Intelligence</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Developing advanced AI models to extract actionable intelligence from satellite imagery, enabling smarter decision-making in various sectors.</p>
 </div>
+<div class="hero-gradient-box flex items-start">
+  <div class="w-full flex flex-col items-center px-1 sm:px-3 lg:px-4" style="margin-top:80px;">
+    <!-- 양옆 여백을 더 늘리기 위해 max-width를 더 줄여서 중앙 영역을 조금 더 좁힘 -->
+    <div class="w-full flex flex-col md:flex-row items-baseline justify-between gap-8" style="max-width:1400px;">
+      <div class="flex flex-col gap-3">
+        <p class="text-white text-5xl md:text-7xl lg:text-7xl font-semibold leading-tight text-left" style="font-family: 'Lexend', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;">
+          About ai.rs.lab
+        </p>
+        <a href="about.html" class="inline-flex items-center gap-2 text-lg md:text-xl font-semibold text-white/80 hover:text-white transition-colors mt-4">
+          <span>View more</span>
+          <span class="material-symbols-outlined text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 0, 'wght' 600;">
+            arrow_forward
+          </span>
+        </a>
+      </div>
+      <p class="text-white text-base md:text-2xl lg:text-2xl font-normal leading-snug text-left md:text-right flex-1" style="font-family: 'Lexend', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;">
+        Interpreting the Earth and Predicting the Future with AI
+      </p>
+    </div>
+    <div class="w-full flex justify-center mt-16">
+       <img src="area/about_ai.rs2.png" alt="About ai.rs illustration" class="w-full max-w-3xl h-auto"
+           style="pointer-events:none; user-select:none; -webkit-user-select:none; -moz-user-select:none;" 
+           oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
+    </div>
+  </div>
 </div>
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex-col hover:shadow-lg hover:border-accent dark:hover:border-accent transition-all">
-<span class="material-symbols-outlined text-accent" style="font-size: 32px;">fullscreen</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-[#101418] dark:text-white text-lg font-bold leading-tight">Satellite Image Super-Resolution</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Enhancing the resolution and quality of satellite images using deep learning techniques, unlocking new levels of detail and analysis.</p>
+<div class="hero-gray-box flex items-start">
+  <div class="w-full flex flex-col items-center px-1 sm:px-3 lg:px-4" style="margin-top:80px;">
+    <div class="w-full flex flex-col md:flex-row items-baseline justify-between gap-8" style="max-width:1400px;">
+      <div class="flex flex-col gap-3">
+        <p class="text-white text-5xl md:text-7xl lg:text-7xl font-semibold leading-tight text-left"
+           style="font-family: 'Lexend', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;">
+           Research Area
+        </p>
+        <a href="research.html" class="inline-flex items-center gap-2 text-lg md:text-xl font-semibold text-white/80 hover:text-white transition-colors mt-4">
+          <span>View more</span>
+          <span class="material-symbols-outlined text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 0, 'wght' 600;">
+            arrow_forward
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
+<div class="hero-light-box flex items-start">
+  <div class="w-full flex flex-col items-center px-1 sm:px-3 lg:px-4" style="margin-top:80px;">
+    <div class="w-full flex flex-col md:flex-row items-baseline justify-between gap-8" style="max-width:1400px;">
+      <div class="flex flex-col gap-3">
+        <p class="text-[#101418] text-5xl md:text-7xl lg:text-7xl font-semibold leading-tight text-left"
+           style="font-family: 'Lexend', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;">
+          Publications
+        </p>
+        <a href="publications.html" class="inline-flex items-center gap-2 text-lg md:text-xl font-semibold text-[#4b5563] hover:text-[#111827] transition-colors mt-4">
+          <span>View more</span>
+          <span class="material-symbols-outlined text-2xl md:text-3xl" style="font-variation-settings: 'FILL' 0, 'wght' 600;">
+            arrow_forward
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="flex flex-1 gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 flex-col hover:shadow-lg hover:border-accent dark:hover:border-accent transition-all">
-<span class="material-symbols-outlined text-accent" style="font-size: 32px;">eco</span>
-<div class="flex flex-col gap-1">
-<h3 class="text-[#101418] dark:text-white text-lg font-bold leading-tight">Environmental Monitoring</h3>
-<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Utilizing AI to monitor environmental changes, from deforestation and climate impact to urban sprawl and agricultural trends.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="mt-16">
-<h2 class="text-[#101418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 text-center">Latest Research Highlights</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">Discover our latest publications and contributions to the field of AI and remote sensing.</p>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group">
-<img class="h-48 w-full object-cover" data-alt="Visualization of neural network connections over a satellite map background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfiCfjTmzgOF43mnXsDPVFssgAgIOokNA3S_gKG5y5WtHWXqLxilDZa-gDPZkgQ9q1ayvLgCog-zTpM3m7SRGfQ7Ul7qQQQT2m54u79H-4e-Wew2xaUOdfqwsX7IrPrWH0yv3zWONRb_rHIep5xZOSfXJjPyVQIqK-R1fftMOZqpVRFzZtFWAw3cWt-tCMde8F-azEq4hhR5CLwiVDt0sv-TEo4OIqZpSnlakRyo7W6ZQrpBDDD6j64eut0a5CyU9wVa-EqVDChPs"/>
-<div class="p-6 flex flex-col flex-1">
-<h3 class="text-lg font-bold text-[#101418] dark:text-white">Self-Supervised Learning for Change Detection</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex-1">A novel framework for detecting changes in satellite imagery without labeled data, improving scalability and efficiency.</p>
-<a class="mt-4 text-sm font-bold text-accent group-hover:underline" href="#">Read More →</a>
-</div>
-</div>
-<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group">
-<img class="h-48 w-full object-cover" data-alt="Abstract 3D rendering of complex data structures and nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHfgHMKnWWsv6_11FCJDt9CUe8JL47eJ4XbKUIa1As5LGoq9DbS491zyGD4YLwCbs5uRoOmkmiNS0elk-PUC7uJaBbhvma6AxlgywFLtmaxpzh4O-_5LncUzFA6qbC6q_TKHXMc-FSlmIivar4KohbMcPECMKHq75RLdzHNN4gc3uDcqFHuFVvmWRj5HqjeiX49rUx-tSF9TYnKnF9D-gOHl8NR5Gemkpsw0Y9drPzU63hQDM3LzxNRCZpLaKcQKWr-oD1YhZgeAw"/>
-<div class="p-6 flex flex-col flex-1">
-<h3 class="text-lg font-bold text-[#101418] dark:text-white">Generative Models for High-Resolution Synthesis</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex-1">This paper introduces a diffusion-based model capable of generating photo-realistic high-resolution satellite imagery from low-resolution inputs.</p>
-<a class="mt-4 text-sm font-bold text-accent group-hover:underline" href="#">Read More →</a>
-</div>
-</div>
-<div class="flex flex-col overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 group">
-<img class="h-48 w-full object-cover" data-alt="A combine harvester working in a vast agricultural field, seen from above" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaivgLNM_96CYL0qaG-_qiJZNkMY7npQ7mT6lVkGABbVIQ9SxUDIt1RsCV7KGpj4D_Hkwz8IuJmaqpCnE5emHSIKSNeSjHwvGgEWmSJnQp9QtFt-4BeFMZ6yQoCZdqz4Fj4Mx5iph7BSz8KHRthC51bG5_mcu8u-8-ywdbV-jH7SmL_LCS-aQEVC9ea9hgXcr4hUfKsdM96TbBnFQ13PpGgmHraIZZODVQGHQJANcwjnxv5IL39fteg_RqcmcEwSa2C-NKZ7lUIMA"/>
-<div class="p-6 flex flex-col flex-1">
-<h3 class="text-lg font-bold text-[#101418] dark:text-white">AI-Powered Crop Yield Prediction</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400 flex-1">Leveraging multi-spectral satellite data and recurrent neural networks to accurately predict crop yields for food security monitoring.</p>
-<a class="mt-4 text-sm font-bold text-accent group-hover:underline" href="#">Read More →</a>
-</div>
-</div>
-</div>
-</section>
-<section class="mt-16">
-<h2 class="text-[#101418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] pb-3 pt-5 text-center">News & Announcements</h2>
-<p class="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">Stay up to date with our lab's latest achievements, events, and milestones.</p>
-<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-<ul class="divide-y divide-gray-200 dark:divide-gray-700">
-<li class="p-4 sm:p-6 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-<a class="flex flex-col sm:flex-row gap-2 sm:gap-4" href="#">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400 w-full sm:w-32 flex-shrink-0">October 26, 2023</p>
-<h3 class="font-semibold text-[#101418] dark:text-white">Paper accepted at NeurIPS 2023</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto flex-shrink-0">Read More</p>
-</a>
-</li>
-<li class="p-4 sm:p-6 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-<a class="flex flex-col sm:flex-row gap-2 sm:gap-4" href="#">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400 w-full sm:w-32 flex-shrink-0">September 15, 2023</p>
-<h3 class="font-semibold text-[#101418] dark:text-white">Dr. Lee awarded the prestigious "Future AI" grant</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto flex-shrink-0">Read More</p>
-</a>
-</li>
-<li class="p-4 sm:p-6 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
-<a class="flex flex-col sm:flex-row gap-2 sm:gap-4" href="#">
-<p class="text-sm font-medium text-gray-500 dark:text-gray-400 w-full sm:w-32 flex-shrink-0">August 01, 2023</p>
-<h3 class="font-semibold text-[#101418] dark:text-white">Welcoming new PhD students to the lab</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 sm:ml-auto flex-shrink-0">Read More</p>
-</a>
-</li>
-</ul>
-</div>
-</section>
-</div>
+<!-- News & Announcements 섹션 제거됨 -->
 </main>
 <footer class="footer">
 <div class="container">
