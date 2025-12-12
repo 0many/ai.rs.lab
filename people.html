@@ -102,6 +102,16 @@
           -moz-user-select: none;
           -ms-user-select: none;
       }
+      
+      /* 각 사람 카드의 가로 너비 고정 */
+      @media (min-width: 768px) {
+          .people-grid > div {
+              width: 100% !important;
+              max-width: calc((1050px - 1.5rem) / 2) !important;
+              min-width: calc((1050px - 1.5rem) / 2) !important;
+              box-sizing: border-box;
+          }
+      }
     </style>
 <script id="tailwind-config">
       tailwind.config = {
@@ -438,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="flex-1">
 <section id="researchers">
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Researchers</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<div class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 <div class="flex items-start gap-7">
 <div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
@@ -457,8 +467,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Jack of all trades</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -480,8 +490,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Net Ecosystem Exchange Estimation</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Machine Learning-based Predictive Modeling of Soil Moisture</p>
 </div>
 </div>
 </div>
@@ -503,8 +513,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Sea Surface Temperature Estimation</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
 </div>
 </div>
 </div>
@@ -526,8 +536,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Feature Matching</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
 </div>
 </div>
 </div>
@@ -535,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <section id="phd-students">
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Ph.D. Course</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<div class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 <div class="flex items-start gap-7">
 <div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
@@ -558,8 +568,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based gap-filling(test)</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>spatial downscaling(test)</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Advanced AI for Geospatial Data Integrity</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Modeling for Environmental Prediction</p>
 </div>
 </div>
 </div>
@@ -581,8 +591,9 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Geospatial Feature Detection</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Deep Learning-based Satellite Data Processing
+</p>
 </div>
 </div>
 </div>
@@ -604,8 +615,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Atmospheric Correction</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -621,14 +632,20 @@ gu7529@pukyong.ac.kr
 <span class="material-symbols-outlined text-base text-accent">mail</span>
               alk31373@pukyong.ac.kr
               </a>
+<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="https://github.com/Yemin-j?tab=repositories" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-accent" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</svg>
+            GitHub
+              </a>
 </div>
 </div>
 <div class="flex-grow"></div>
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-driven Data Modeling(ML)</p>
 </div>
 </div>
 </div>
@@ -650,8 +667,9 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Synthetic Aperture Radar (SAR) Image Processing</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Remote Sensing
+</p>
 </div>
 </div>
 </div>
@@ -673,8 +691,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Spatiotemporal Video Prediction</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -682,7 +700,7 @@ gu7529@pukyong.ac.kr
 </section>
 <section id="masters-students">
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">M.S. Course</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<div class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 <div class="flex items-start gap-7">
 <div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
@@ -701,8 +719,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -724,8 +742,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -753,8 +771,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Vision-Language Model</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Computer Vision</p>
 </div>
 </div>
 </div>
@@ -776,8 +794,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -785,7 +803,7 @@ gu7529@pukyong.ac.kr
 </section>
 <section id="undergrad-researchers">
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Undergraduate Students</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<div class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
 <div class="flex items-start gap-7">
 <div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
@@ -804,8 +822,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>SAR-EO Data Fusion</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -827,8 +845,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
@@ -850,8 +868,8 @@ gu7529@pukyong.ac.kr
 <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
 <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
 <div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>test</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
 </div>
 </div>
 </div>
