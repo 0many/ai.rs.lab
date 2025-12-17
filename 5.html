@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Members - ai.rs.lab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="globals.css" />
+<link rel="stylesheet" href="style.css" />
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      
+      .segmented-control {
+          display: flex;
+          gap: 0.5rem;
+      }
+      
+      .segmented-control a {
+          flex: 1 1 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+          font-size: 0.9375rem;
+          transition: all 0.2s ease-in-out;
+          color: #e2e8f0;
+          white-space: nowrap;
+          min-width: 0;
+      }
+      
+      .dark .segmented-control a {
+          color: #e2e8f0;
+      }
+      
+      .segmented-control a:first-child {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+      }
+      
+      .segmented-control a:last-child {
+          border-top-right-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+      }
+      
+      .segmented-control a:hover {
+          color: #00AEEF;
+          z-index: 1;
+          position: relative;
+      }
+      
+      .dark .segmented-control a:hover {
+          color: #00AEEF;
+          z-index: 1;
+          position: relative;
+      }
+      
+      .segmented-control a.active {
+          color: #00AEEF;
+          box-shadow: none;
+          z-index: 2;
+          position: relative;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          text-decoration-thickness: 2px;
+          text-decoration-color: #00AEEF;
+      }
+      
+      .dark .segmented-control a.active {
+          color: #00AEEF;
+          box-shadow: none;
+          text-decoration-color: #00AEEF;
+      }
+      
+      .segmented-control a.active .material-symbols-outlined {
+          font-variation-settings: 'FILL' 1;
+          color: #00AEEF;
+      }
+      
+      .dark .segmented-control a.active .material-symbols-outlined {
+          color: #00AEEF;
+      }
+      
+      /* 섹션 기본 숨김 처리 */
+      section[id] {
+          display: none;
+      }
+      
+      /* 이미지 보호 */
+      img {
+          pointer-events: none;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+      }
+      
+      /* 각 사람 카드의 가로 너비 고정 */
+      @media (min-width: 768px) {
+          .people-grid > div {
+              width: 100% !important;
+              max-width: calc((1050px - 1.5rem) / 2) !important;
+              min-width: calc((1050px - 1.5rem) / 2) !important;
+              box-sizing: border-box;
+          }
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#003366",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0f1923",
+              "primary-dark": "#0a2342",
+              "secondary": "#5d737e",
+              "accent": "#00AEEF",
+              "card-light": "#ffffff",
+              "card-dark": "#1a2c3e",
+              "text-light": "#0f172a",
+              "text-dark": "#e2e8f0",
+              "text-muted-light": "#5d737e",
+              "text-muted-dark": "#94a3b8",
+            },
+            fontFamily: {
+              "display": ["Lexend", "Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<script>
+      // 페이지 로드 시 스크롤 자동 복원 방지
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      
+      // 페이지 로드 전에 스크롤 방지
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+      
+      // 즉시 스크롤을 맨 위로
+      window.scrollTo(0, 0);
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // 모든 섹션과 탭 가져오기
+        const sections = document.querySelectorAll('section[id]');
+        const tabs = document.querySelectorAll('.segmented-control a');
+        
+        function showSection(hash) {
+          // 해시가 없으면 기본값으로 researchers 표시
+          const targetHash = hash || '#researchers';
+          
+          // 모든 섹션 숨기기
+          sections.forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // 선택된 섹션만 보이기
+          const targetSection = document.querySelector(targetHash);
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+          
+          // 탭 active 클래스 업데이트
+          tabs.forEach(tab => {
+            if (tab.getAttribute('href') === targetHash) {
+              tab.classList.add('active');
+            } else {
+              tab.classList.remove('active');
+            }
+          });
+        }
+        
+        // 초기 로드 - URL 해시 확인 (해시 제거 전에 먼저 저장)
+        const initialHash = window.location.hash || '#researchers';
+        
+        // URL에서 해시 제거 (스크롤 방지) - 하지만 해시는 이미 저장됨
+        if (window.location.hash) {
+          history.replaceState(null, null, window.location.pathname);
+        }
+        
+        // 저장된 해시로 섹션 표시 (약간의 지연을 두어 DOM이 완전히 로드된 후 실행)
+        setTimeout(() => {
+          showSection(initialHash);
+        }, 50);
+        
+        // 페이지 로드 시 스크롤 위치를 맨 위로 고정
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 100);
+        
+        // 해시 변경 감지 (외부 링크로 접근 시)
+        window.addEventListener('hashchange', () => {
+          const hash = window.location.hash || '#researchers';
+          showSection(hash);
+        });
+        
+        // 탭 클릭 이벤트
+        tabs.forEach(tab => {
+          tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hash = tab.getAttribute('href');
+            // 스크롤 없이 URL 해시만 변경
+            history.pushState(null, null, hash);
+            showSection(hash);
+          });
+        });
+        
+        // 브라우저 뒤로가기/앞으로가기 지원
+        window.addEventListener('popstate', () => {
+          const hash = window.location.hash || '#researchers';
+          showSection(hash);
+        });
+      });
+    </script>
+<script>
+      // 전체 페이지 우클릭 및 드래그 방지
+      document.addEventListener('DOMContentLoaded', function() {
+        // 우클릭 방지
+        document.body.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, false);
+        
+        // 드래그 방지
+        document.body.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, false);
+        
+        // 선택 방지 (이미지만)
+        document.body.addEventListener('selectstart', function(e) {
+          if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            return false;
+          }
+        }, false);
+        
+        // 키보드 단축키로 저장 방지 (Ctrl+S)
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+            return false;
+          }
+        });
+        
+        // 모든 이미지에 추가 보호
+        const images = document.getElementsByTagName('img');
+        for (let i = 0; i < images.length; i++) {
+          images[i].addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+          });
+          images[i].addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+          });
+        }
+      });
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101418] dark:text-background-light" oncontextmenu="return false;" ondragstart="return false;">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="header sticky top-0 z-50">
+<div class="container">
+<div class="frame">
+<a href="index.html" class="link-AI-RS-lab-logo"></a>
+<!-- Desktop Navigation -->
+<nav class="navbar hidden lg:block mega-menu-nav group relative">
+<a class="text-wrapper nav-link" href="2.html">About ai.rs</a>
+<a class="div nav-link" href="3.html">Research</a>
+<a class="text-wrapper-2 nav-link" href="4.html">Professor</a>
+<a class="div nav-link" href="5.html">Members</a>
+<a class="text-wrapper-3 nav-link" href="6.html">Publications</a>
+<a class="text-wrapper-4 nav-link" href="7.html">News</a>
+<div style="display: grid; grid-template-columns: repeat(6, 1fr);" id="main-nav" class="hidden">
+</div>
+<!-- Mega Menu Dropdown -->
+<div class="mega-dropdown">
+<div>
+<div>
+<!-- About Column -->
+<div>
+<a href="2.html#about">About Us</a>
+<a href="2.html#contact">Contact</a>
+</div>
+<!-- Research Column -->
+<div>
+<a href="3.html#research-area">Research Area</a>
+</div>
+<!-- Professor Column -->
+<div>
+<a href="4.html">Professor</a>
+</div>
+<!-- Members Column -->
+<div>
+<a href="5.html#researchers">Researchers</a>
+<a href="5.html#phd-students">Ph.D. Course</a>
+<a href="5.html#masters-students">M.S. Course</a>
+<a href="5.html#undergrad-researchers">Undergraduate<br>Students</a>
+<a href="5.html#alumni">Alumni</a>
+</div>
+<!-- Publications Column -->
+<div>
+<a href="6.html#journal">Journal</a>
+<a href="6.html#patent">Patent</a>
+</div>
+<!-- News Column -->
+<div>
+<a href="7.html">News</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent dark:hover:text-accent transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="mobile-menu lg:hidden fixed inset-0 bg-black/50 z-50 opacity-0 invisible transition-all duration-300">
+<div class="mobile-menu-content fixed top-0 right-0 h-full w-80 bg-white dark:bg-background-dark shadow-2xl transform translate-x-full transition-transform duration-300">
+<div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+<span class="text-xl font-bold text-[#101418] dark:text-white">Menu</span>
+<button id="mobile-menu-close" class="flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 gap-2">
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="2.html">About ai.rs</a>
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="3.html">Research</a>
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="4.html">Professor</a>
+<div class="mobile-nav-group">
+<button class="mobile-nav-toggle w-full flex items-center justify-between text-accent dark:text-accent text-lg font-bold py-3 border-b border-gray-200 dark:border-gray-700">
+<span>Members</span>
+<span class="material-symbols-outlined transform transition-transform">expand_more</span>
+</button>
+<div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300">
+<a href="5.html#researchers" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Researchers</a>
+<a href="5.html#phd-students" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Ph.D. Course</a>
+<a href="5.html#masters-students" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">M.S. Course</a>
+<a href="5.html#undergrad-researchers" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Undergraduate Students</a>
+<a href="5.html#alumni" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Alumni</a>
+</div>
+</div>
+<div class="mobile-nav-group">
+<button class="mobile-nav-toggle w-full flex items-center justify-between text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700">
+<span>Publications</span>
+<span class="material-symbols-outlined transform transition-transform">expand_more</span>
+</button>
+<div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300">
+<a href="6.html#journal" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Journal</a>
+<a href="6.html#patent" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Patent</a>
+</div>
+</div>
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="7.html">News</a>
+</nav>
+</div>
+</div>
+</header>
+<script>
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenuContent = mobileMenu.querySelector('.mobile-menu-content');
+  
+  function openMobileMenu() {
+    mobileMenu.classList.remove('invisible', 'opacity-0');
+    setTimeout(() => {
+      mobileMenuContent.classList.remove('translate-x-full');
+    }, 10);
+  }
+  
+  function closeMobileMenu() {
+    mobileMenuContent.classList.add('translate-x-full');
+    setTimeout(() => {
+      mobileMenu.classList.add('invisible', 'opacity-0');
+    }, 300);
+  }
+  
+  mobileMenuBtn.addEventListener('click', openMobileMenu);
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileMenu.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Mobile submenu toggles
+  const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
+  mobileNavToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const submenu = this.nextElementSibling;
+      const icon = this.querySelector('.material-symbols-outlined');
+      
+      if (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') {
+        submenu.style.maxHeight = '0px';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+});
+</script>
+<div class="relative w-full overflow-hidden bg-gradient-to-b from-blue-100 to-white dark:from-primary-dark dark:to-background-dark" style="height: 385px;">
+<img alt="Space background" class="absolute inset-0 w-full h-full object-cover pointer-events-none" src="space/1.png"/>
+<div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+<div class="relative z-10 flex flex-col items-center justify-center" style="height: 328px;">
+<div class="text-center px-4">
+<p class="text-5xl md:text-6xl font-black leading-tight tracking-[-0.03em] text-white">Members</p>
+</div>
+</div>
+<div class="relative z-10 border-b border-gray-200 dark:border-gray-700 bg-black/60 dark:bg-black/60" style="height: 57px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+<nav aria-label="Degree Tabs" class="segmented-control flex justify-center max-w-5xl mx-auto w-full">
+<a class="group py-2.5" href="#researchers">Researchers</a>
+<a class="group py-2.5" href="#phd-students">Ph.D. Course</a>
+<a class="group py-2.5" href="#masters-students">M.S. Course</a>
+<a class="group py-2.5" href="#undergrad-researchers">Undergraduate Students</a>
+<a class="group py-2.5" href="#alumni">Alumni</a>
+</nav>
+</div>
+</div>
+</div>
+<!-- ==================== MAIN CONTENT ==================== -->
+<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 py-12">
+<div class="flex flex-col gap-12">
+<div class="flex-1">
+
+<!-- ==================== Researchers 섹션 ==================== -->
+<section id="researchers">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Researchers</h2>
+<div id="researchers-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Seoyeon Kim" src="member/증명사진/김형우.png"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Hyungwoo Kim</h4>
+<p class="text-xl text-secondary mt-2">Principal Engineer</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              kalituma@gmail.com
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Jack of all trades</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Jiah Jang" src="member/증명사진/김나리.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Nari Kim</h4>
+<p class="text-xl text-secondary mt-2">Research Professor</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              kimnari@pknu.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI based Predictive Modeling of SM and NEE</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/안지혜.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jihye Ahn</h4>
+<p class="text-xl text-secondary mt-2">Research Professor</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              ongpong@pknu.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Sea Surface Temperature Estimation</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Satellite Image Processing</p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of HyoJu Park" src="member/증명사진/임윤교.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Yungyo Im</h4>
+<p class="text-xl text-secondary mt-2">Researcher</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              dbsry129@pukyong.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Feature Matching</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Seoyeon Kim" src="member/증명사진/김리원.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Riwon Kim</h4>
+<p class="text-xl text-secondary mt-2">Researcher</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              rxwxnee@gmail.com
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Jiah Jang" src="member/증명사진/장지아.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jiah Jang</h4>
+<p class="text-xl text-secondary mt-2">Researcher</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              jangjiah12@gmail.com
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/심재웅.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jaeung Sim</h4>
+<p class="text-xl text-secondary mt-2">Researcher</p>
+<a class="mt-14 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+            tlawodnd1325@naver.com
+              </a>
+<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="https://github.com/simjw0223?tab=repositories" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-accent" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</svg>
+            GitHub
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Vision-Language Model</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Computer Vision</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== Ph.D. Course 섹션 ==================== -->
+<section id="phd-students">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Ph.D. Course</h2>
+<div id="phd-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/윤유정.png"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Youjeong Youn</h4>
+<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
+<a class="mt-14 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+                dbwjd0757@pukyong.ac.kr
+              </a>
+<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="member/CV/윤유정_CV.pdf" target="_blank">
+<span class="material-symbols-outlined text-base text-accent">description</span>
+                CV
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Advanced AI for Geospatial Data Integrity</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Modeling for Environmental Prediction</p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/강종구.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jonggu Kang</h4>
+<p class="text-xl text-secondary mt-2">Integrated Ph.D. Candidate</p>
+<a class="mt-14 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+gu7529@pukyong.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Geospatial Feature Detection</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Deep Learning-based Satellite Data Processing
+</p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/김서연.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Seoyeon Kim</h4>
+<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+          ksyvv08@pukyong.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Atmospheric Correction</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/정예민.png"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Yemin Jeong</h4>
+<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+          jym6677@pukyong.ac.kr
+              </a>
+<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="https://github.com/Yemin-j?tab=repositories" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-accent" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+</svg>
+            GitHub
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-driven Data Modeling(ML)</p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/김근아.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Geunah Kim</h4>
+<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              talkingphotato@gmail.com
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Spatiotemporal Video Prediction</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/최소연.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Soyeon Choi</h4>
+<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              unggungqe@gmail.com
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Synthetic Aperture Radar (SAR) Image Processing</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Remote Sensing
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== M.S. Course 섹션 ==================== -->
+<section id="masters-students">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">M.S. Course</h2>
+<div id="masters-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of HyoJu Park" src="member/증명사진/박효주.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">HyoJu Park</h4>
+<p class="text-xl text-secondary mt-2">Master's Candidate</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              gywn_1230@pukyong.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Seoyeon Kim" src="member/증명사진/박재성.jpg"/>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">JaeSeong Park</h4>
+<p class="text-xl text-secondary mt-2">Master's Candidate</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              js513jj@naver.com
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>SAR-EO Data Fusion</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== Undergraduate Students 섹션 ==================== -->
+<section id="undergrad-researchers">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Undergraduate Students</h2>
+<div id="undergrad-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
+<!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500" style="font-size: 80px;">person</span>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">DongWoo Ha</h4>
+<p class="text-xl text-secondary mt-2">&nbsp;</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              hdw0415@pukyong.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+<div class="flex items-start gap-7">
+<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500" style="font-size: 80px;">person</span>
+</div>
+<div class="flex flex-col flex-grow">
+<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Suji Lee</h4>
+<p class="text-xl text-secondary mt-2">&nbsp;</p>
+<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
+<span class="material-symbols-outlined text-base text-accent">mail</span>
+              suzii@pukyong.ac.kr
+              </a>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+<div class="flex flex-col gap-1">
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
+<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== Alumni 섹션 ==================== -->
+<section id="alumni">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Alumni</h2>
+<div class="max-w-4xl mx-auto px-4">
+<div class="mb-12">
+<h3 class="text-2xl font-bold text-accent mb-2">ALUMNI (Ph.D.)</h3>
+<hr class="border-t-2 border-gray-300 dark:border-gray-600 mb-4"/>
+<ul id="alumni-phd-list" class="space-y-3 text-lg font-semibold text-text-light dark:text-text-dark">
+<!-- 박사 졸업생 목록이 여기에 동적으로 생성됩니다 -->
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>김나리(2018), 국립부경대학교</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>김대선(2018), 한국해양과학기술원</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>김광진(2020), 지오시스템리서치</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>조성억(2022), 국립부경대학교</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>이수진(2023), 국립농업과학원</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>안지혜(2023), 국립부경대학교</span>
+</li>
+</li>
+</ul>
+</div>
+<div class="mb-12">
+<h3 class="text-2xl font-bold text-accent mb-2">ALUMNI (M.S.)</h3>
+<hr class="border-t-2 border-gray-300 dark:border-gray-600 mb-4"/>
+<ul id="alumni-masters-list" class="space-y-3 text-lg font-semibold text-text-light dark:text-text-dark">
+<!-- 석사 졸업생 목록이 여기에 동적으로 생성됩니다 -->
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>이하정(2012), BNK시스템</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>이승록(2012), 지오시스템리서치</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>김  구(2015), 국립환경과학원</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>공인학(2018), 한국국토정보공사</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>김영호(2019), 나라스페이스테크놀로지</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>김지원(2019), CJ 대한통운</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>박성욱(2019), 나라스페이스테크놀로지</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>윤예슬(2020), 나라스페이스테크놀로지</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>조수빈(2022), 나라스페이스테크놀로지</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>박강현(2024), 한국항공우주연구원</span>
+</li>
+<li class="flex items-center">
+<span class="mr-3">•</span>
+<span>서영민(2025), 우주항공청</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="ai-rs-lab-logo"></div>
+<div class="frame">
+<div class="heading-address">ADDRESS</div>
+<p class="text-wrapper">부산광역시 남구 용소로 45, 환경해양관(B14) 613호, 인공지능 원격탐사 연구실</p>
+<p class="text-wrapper">Pukyong National University B14, Room 613, 45 Yongso-ro, Nam-gu, Busan 48513, Republic of Korea</p>
+</div>
+<div class="div">
+<div class="heading-contact">CONTACT</div>
+<div class="text-wrapper-2">modconfi@pknu.ac.kr</div>
+</div>
+<div class="horizontal-border"><p class="p">© 2024 ai.rs.lab. All Rights Reserved.</p></div>
+</div>
+</footer>
+</div>
+
+<!-- ==================== 멤버 데이터 동적 로딩 스크립트 ==================== -->
+<script>
+// JSON 데이터로부터 멤버 카드를 동적으로 생성합니다
+document.addEventListener('DOMContentLoaded', async function() {
+  try {
+    const response = await fetch('member/json/ai.rs.meber.json');
+    const data = await response.json();
+    
+    // 각 섹션 렌더링
+    renderMembers('researchers-container', data.researchers);
+    renderMembers('phd-container', data.phd_students);
+    renderMembers('masters-container', data.masters_students);
+    renderMembers('undergrad-container', data.undergrad_students);
+    renderAlumni(data.alumni);
+    
+  } catch (error) {
+    console.error('멤버 데이터 로딩 실패:', error);
+  }
+});
+
+// 멤버 카드 생성 함수
+function renderMembers(containerId, members) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  
+  container.innerHTML = ''; // 기존 내용 제거
+  
+  members.forEach(member => {
+    const card = createMemberCard(member);
+    container.appendChild(card);
+  });
+}
+
+// 개별 멤버 카드 HTML 생성
+function createMemberCard(member) {
+  const card = document.createElement('div');
+  card.className = 'bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300';
+  
+  // 사진 HTML (있으면 img, 없으면 아이콘)
+  const photoHTML = member.photo 
+    ? `<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" src="${member.photo}"/>`
+    : `<span class="material-symbols-outlined text-gray-400 dark:text-gray-500" style="font-size: 80px;">person</span>`;
+  
+  // 이메일 링크 HTML
+  const emailHTML = `
+    <a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:${member.email}">
+      <span class="material-symbols-outlined text-base text-accent">mail</span>
+      ${member.email}
+    </a>`;
+  
+  // GitHub 링크 HTML (있는 경우)
+  const githubHTML = member.github ? `
+    <a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="${member.github}" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-accent" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      GitHub
+    </a>` : '';
+  
+  // CV 링크 HTML (있는 경우)
+  const cvHTML = member.cv ? `
+    <a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="${member.cv}" target="_blank">
+      <span class="material-symbols-outlined text-base text-accent">description</span>
+      CV
+    </a>` : '';
+  
+  // Research Interests HTML
+  const interestsHTML = member.interests.map(interest => 
+    `<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>${interest}</p>`
+  ).join('\n');
+  
+  // 전체 카드 HTML
+  card.innerHTML = `
+    <div class="flex items-start gap-7">
+      <div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
+        ${photoHTML}
+      </div>
+      <div class="flex flex-col flex-grow">
+        <h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">${member.name}</h4>
+        <p class="text-xl text-secondary mt-2">${member.title || '&nbsp;'}</p>
+        ${emailHTML}
+        ${githubHTML}
+        ${cvHTML}
+      </div>
+    </div>
+    <div class="flex-grow"></div>
+    <div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
+      <p class="text-lg font-medium text-accent mb-2">Research Interests</p>
+      <div class="flex flex-col gap-1">
+        ${interestsHTML}
+      </div>
+    </div>
+  `;
+  
+  return card;
+}
+
+// Alumni 섹션 렌더링
+function renderAlumni(alumni) {
+  const phdList = document.getElementById('alumni-phd-list');
+  const mastersList = document.getElementById('alumni-masters-list');
+  
+  if (phdList) {
+    phdList.innerHTML = alumni.phd.map(name => `
+      <li class="flex items-center">
+        <span class="mr-3">•</span>
+        <span>${name}</span>
+      </li>
+    `).join('');
+  }
+  
+  if (mastersList) {
+    mastersList.innerHTML = alumni.masters.map(name => `
+      <li class="flex items-center">
+        <span class="mr-3">•</span>
+        <span>${name}</span>
+      </li>
+    `).join('');
+  }
+}
+</script>
+
+<script>
+  // 드롭다운 메뉴 링크 클릭 시 빠르게 사라지게 하기
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.mega-dropdown a');
+    const dropdown = document.querySelector('.mega-dropdown');
+    const navbar = document.querySelector('.navbar.group');
+    
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (dropdown) {
+          dropdown.style.transition = 'opacity 0.1s ease-in-out, visibility 0.1s ease-in-out';
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+        }
+      });
+    });
+  });
+</script>
+</body></html>

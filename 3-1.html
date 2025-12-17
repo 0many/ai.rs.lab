@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Remote Sensing - ai.rs.lab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link rel="stylesheet" href="globals.css" />
+<link rel="stylesheet" href="style.css" />
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+      
+      .segmented-control {
+          display: flex;
+          gap: 0.25rem;
+      } 
+      
+      .segmented-control a {
+          flex: 1 1 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+          font-size: 0.9375rem;
+          transition: all 0.2s ease-in-out;
+          color: #e2e8f0;
+          white-space: nowrap;
+          min-width: 0;
+      }
+      
+      .dark .segmented-control a {
+          color: #e2e8f0;
+      }
+      
+      .segmented-control a:first-child {
+          border-top-left-radius: 0.5rem;
+          border-bottom-left-radius: 0.5rem;
+      }
+      
+      .segmented-control a:last-child {
+          border-top-right-radius: 0.5rem;
+          border-bottom-right-radius: 0.5rem;
+      }
+      
+      .segmented-control a:hover {
+          color: #00AEEF;
+          z-index: 1;
+          position: relative;
+      }
+      
+      .dark .segmented-control a:hover {
+          color: #00AEEF;
+          z-index: 1;
+          position: relative;
+      }
+      
+      .segmented-control a.active {
+          color: #00AEEF;
+          box-shadow: none;
+          z-index: 2;
+          position: relative;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+          text-decoration-thickness: 2px;
+          text-decoration-color: #00AEEF;
+      }
+      
+      .dark .segmented-control a.active {
+          color: #00AEEF;
+          box-shadow: none;
+          text-decoration-color: #00AEEF;
+      }
+      
+      /* 섹션 기본 숨김 처리 */
+      section[id] {
+          display: none;
+      }
+      
+      /* Journal 서브탭 스타일 */
+      .journal-tabs {
+          display: flex;
+          gap: 0;
+          width: 100%;
+          min-width: 1300px;
+          max-width: 1300px;
+          margin: 0 auto 3rem;
+          background-color: #e5e7eb;
+          border-radius: 9999px;
+          padding: 0.25rem;
+          position: relative;
+      }
+      
+      .dark .journal-tabs {
+          background-color: #374151;
+      }
+      
+      .journal-tabs button {
+          flex: 1;
+          padding: 0.5rem 2rem;
+          font-weight: 500;
+          font-size: 1rem;
+          border-radius: 9999px;
+          transition: all 0.2s ease-in-out;
+          background-color: transparent;
+          color: #1f2937;
+          border: none;
+          cursor: pointer;
+      }
+      
+      .dark .journal-tabs button {
+          color: #e5e7eb;
+      }
+      
+      .journal-tabs button.active {
+          background-color: #003366;
+          color: white;
+      }
+      
+      .dark .journal-tabs button.active {
+          background-color: #003366;
+          color: white;
+      }
+      
+      .journal-tabs button:hover:not(.active) {
+          background-color: rgba(0, 0, 0, 0.05);
+      }
+      
+      .dark .journal-tabs button:hover:not(.active) {
+          background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .journal-content {
+          display: none;
+      }
+      
+      .journal-content.active {
+          display: block;
+      }
+      
+      /* 이미지 보호 */
+      img {
+          pointer-events: none;
+          user-select: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#003366",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0f1923",
+              "primary-dark": "#0a2342",
+              "secondary": "#5d737e",
+              "accent": "#00AEEF",
+              "card-light": "#ffffff",
+              "card-dark": "#1a2c3e",
+              "text-light": "#0f172a",
+              "text-dark": "#e2e8f0",
+              "text-muted-light": "#5d737e",
+              "text-muted-dark": "#94a3b8",
+            },
+            fontFamily: {
+              "display": ["Lexend", "Pretendard", "-apple-system", "BlinkMacSystemFont", "system-ui", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <script>
+      // 페이지 로드 시 스크롤 자동 복원 방지
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      
+      // 즉시 스크롤을 맨 위로
+      window.scrollTo(0, 0);
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // 모든 섹션과 탭 가져오기
+        const sections = document.querySelectorAll('section[id]');
+        const tabs = document.querySelectorAll('.segmented-control a');
+        
+        function showSection(hash) {
+          // remote-sensing, ai-monitoring, geospatial-fusion 해시는 
+          // research-area 섹션 내의 탭이므로 research-area를 표시
+          const tabHashes = ['#sub3-1', '#sub3-2', '#sub3-3'];
+          const targetHash = tabHashes.includes(hash) ? '#research-area' : (hash || '#research-area');
+          
+          // 모든 섹션 숨기기
+          sections.forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // 선택된 섹션만 보이기
+          const targetSection = document.querySelector(targetHash);
+          if (targetSection) {
+            targetSection.style.display = 'block';
+          }
+          
+          // 탭 active 클래스 업데이트
+          tabs.forEach(tab => {
+            if (tab.getAttribute('href') === targetHash) {
+              tab.classList.add('active');
+            } else {
+              tab.classList.remove('active');
+            }
+          });
+          
+        }
+        
+        // URL 해시 확인 (탭 활성화를 위해 먼저 확인)
+        const hash = window.location.hash;
+        
+        // 초기 로드 - research-area 섹션 표시
+        showSection(hash || '');
+        // research-area 섹션이 없으면 강제로 표시
+        const researchAreaSection = document.getElementById('research-area');
+        if (researchAreaSection) {
+          researchAreaSection.style.display = 'block';
+        }
+        
+        // URL 해시에 따라 탭 활성화 (초기 로드 시에는 히스토리 업데이트 안 함)
+        if (hash === '#sub3-1') {
+          switchResearchTab('remote-sensing', false);
+        } else if (hash === '#sub3-2') {
+          switchResearchTab('ai-monitoring', false);
+        } else if (hash === '#sub3-3') {
+          switchResearchTab('geospatial-fusion', false);
+        } else {
+          // 해시가 없으면 기본으로 첫 번째 탭 활성화
+          switchResearchTab('remote-sensing', false);
+        }
+        
+        // 탭 클릭 이벤트
+        tabs.forEach(tab => {
+          tab.addEventListener('click', (e) => {
+            e.preventDefault();
+            const hash = tab.getAttribute('href');
+            
+            // URL 업데이트 (해시 포함)
+            history.pushState(null, null, hash);
+            
+            // 섹션 표시
+            showSection(hash);
+          });
+        });
+        
+        // 브라우저 뒤로가기/앞으로가기 지원
+        window.addEventListener('popstate', () => {
+          const hash = window.location.hash;
+          showSection(hash);
+          // research-area 섹션이 없으면 강제로 표시
+          const researchAreaSection = document.getElementById('research-area');
+          if (researchAreaSection) {
+            researchAreaSection.style.display = 'block';
+          }
+          // 해시에 따라 서브탭도 활성화
+          if (hash === '#sub3-1') {
+            switchResearchTab('remote-sensing', false);
+          } else if (hash === '#sub3-2') {
+            switchResearchTab('ai-monitoring', false);
+          } else if (hash === '#sub3-3') {
+            switchResearchTab('geospatial-fusion', false);
+          } else {
+            // 해시가 없으면 기본으로 첫 번째 탭 활성화
+            switchResearchTab('remote-sensing', false);
+          }
+        });
+      });
+      
+      // Research 탭 전환 함수
+      function switchResearchTab(type, updateHistory = true) {
+        const researchSection = document.getElementById('research-area');
+        const tabButtons = researchSection.querySelectorAll('.journal-tabs button');
+        
+        // 모든 탭 버튼의 active 클래스 제거
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // 모든 콘텐츠 숨기기
+        document.getElementById('remote-sensing').classList.remove('active');
+        document.getElementById('ai-monitoring').classList.remove('active');
+        document.getElementById('geospatial-fusion').classList.remove('active');
+        
+        // 선택된 탭 활성화
+        if (type === 'remote-sensing') {
+          tabButtons[0].classList.add('active');
+          document.getElementById('remote-sensing').classList.add('active');
+        } else if (type === 'ai-monitoring') {
+          tabButtons[1].classList.add('active');
+          document.getElementById('ai-monitoring').classList.add('active');
+        } else if (type === 'geospatial-fusion') {
+          tabButtons[2].classList.add('active');
+          document.getElementById('geospatial-fusion').classList.add('active');
+        }
+        
+        // URL 해시 업데이트 (사용자 클릭 시에만)
+        if (updateHistory) {
+          // 내부 타입을 URL 해시로 매핑
+          const hashMap = {
+            'remote-sensing': '#sub3-1',
+            'ai-monitoring': '#sub3-2',
+            'geospatial-fusion': '#sub3-3'
+          };
+          const newHash = hashMap[type];
+          // 현재 해시와 다를 때만 업데이트
+          if (window.location.hash !== newHash) {
+            history.pushState(null, null, newHash);
+          }
+        }
+      }
+      
+      // 전체 페이지 우클릭 및 드래그 방지
+      document.addEventListener('DOMContentLoaded', function() {
+        // 우클릭 방지
+        document.body.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, false);
+        
+        // 드래그 방지
+        document.body.addEventListener('dragstart', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        }, false);
+        
+        // 선택 방지 (이미지만)
+        document.body.addEventListener('selectstart', function(e) {
+          if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+            return false;
+          }
+        }, false);
+        
+        // 키보드 단축키로 저장 방지 (Ctrl+S)
+        document.addEventListener('keydown', function(e) {
+          if (e.ctrlKey && e.key === 's') {
+            e.preventDefault();
+            return false;
+          }
+        });
+        
+        // 모든 이미지에 추가 보호
+        const images = document.getElementsByTagName('img');
+        for (let i = 0; i < images.length; i++) {
+          images[i].addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+          });
+          images[i].addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+          });
+        }
+      });
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101418] dark:text-background-light" oncontextmenu="return false;" ondragstart="return false;">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="header sticky top-0 z-50">
+<div class="container">
+<div class="frame">
+<a href="index.html" class="link-AI-RS-lab-logo"></a>
+<!-- Desktop Navigation -->
+<nav class="navbar hidden lg:block mega-menu-nav group relative">
+<a class="text-wrapper nav-link" href="2.html">About ai.rs</a>
+<a class="div nav-link" href="3.html">Research</a>
+<a class="text-wrapper-2 nav-link" href="4.html">Professor</a>
+<a class="div nav-link" href="5.html">Members</a>
+<a class="text-wrapper-3 nav-link" href="6.html">Publications</a>
+<a class="text-wrapper-4 nav-link" href="7.html">News</a>
+<div style="display: grid; grid-template-columns: repeat(6, 1fr);" id="main-nav" class="hidden">
+</div>
+<!-- Mega Menu Dropdown -->
+<div class="mega-dropdown">
+<div>
+<div>
+<!-- About Column -->
+<div>
+<a href="2.html#about">About Us</a>
+<a href="2.html#contact">Contact</a>
+</div>
+<!-- Research Column -->
+<div>
+<a href="3.html#research-area">Research Area</a>
+</div>
+<!-- Professor Column -->
+<div>
+<a href="4.html">Professor</a>
+</div>
+<!-- Members Column -->
+<div>
+<a href="5.html#researchers">Researchers</a>
+<a href="5.html#phd-students">Ph.D. Course</a>
+<a href="5.html#masters-students">M.S. Course</a>
+<a href="5.html#undergrad-researchers">Undergraduate<br>Students</a>
+<a href="5.html#alumni">Alumni</a>
+</div>
+<!-- Publications Column -->
+<div>
+<a href="6.html#journal">Journal</a>
+<a href="6.html#patent">Patent</a>
+</div>
+<!-- News Column -->
+<div>
+<a href="7.html">News</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent dark:hover:text-accent transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="mobile-menu lg:hidden fixed inset-0 bg-black/50 z-50 opacity-0 invisible transition-all duration-300">
+<div class="mobile-menu-content fixed top-0 right-0 h-full w-80 bg-white dark:bg-background-dark shadow-2xl transform translate-x-full transition-transform duration-300">
+<div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+<span class="text-xl font-bold text-[#101418] dark:text-white">Menu</span>
+<button id="mobile-menu-close" class="flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 gap-2">
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="2.html">About ai.rs</a>
+<a class="mobile-nav-link text-accent dark:text-accent text-lg font-bold py-3 border-b border-gray-200 dark:border-gray-700" href="3.html">Research</a>
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="4.html">Professor</a>
+<div class="mobile-nav-group">
+<button class="mobile-nav-toggle w-full flex items-center justify-between text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700">
+<span>Members</span>
+<span class="material-symbols-outlined transform transition-transform">expand_more</span>
+</button>
+<div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300">
+<a href="5.html#researchers" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Researchers</a>
+<a href="5.html#phd-students" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Ph.D. Course</a>
+<a href="5.html#masters-students" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">M.S. Course</a>
+<a href="5.html#undergrad-researchers" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Undergraduate Students</a>
+<a href="5.html#alumni" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Alumni</a>
+</div>
+</div>
+<div class="mobile-nav-group">
+<button class="mobile-nav-toggle w-full flex items-center justify-between text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700">
+<span>Publications</span>
+<span class="material-symbols-outlined transform transition-transform">expand_more</span>
+</button>
+<div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300">
+<a href="6.html#journal" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Journal</a>
+<a href="6.html#patent" class="block pl-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-accent transition-colors">Patent</a>
+</div>
+</div>
+<a class="mobile-nav-link text-[#101418] dark:text-white text-lg font-medium py-3 hover:text-accent transition-colors border-b border-gray-200 dark:border-gray-700" href="7.html">News</a>
+</nav>
+</div>
+</div>
+</header>
+<script>
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenuContent = mobileMenu.querySelector('.mobile-menu-content');
+  
+  function openMobileMenu() {
+    mobileMenu.classList.remove('invisible', 'opacity-0');
+    setTimeout(() => {
+      mobileMenuContent.classList.remove('translate-x-full');
+    }, 10);
+  }
+  
+  function closeMobileMenu() {
+    mobileMenuContent.classList.add('translate-x-full');
+    setTimeout(() => {
+      mobileMenu.classList.add('invisible', 'opacity-0');
+    }, 300);
+  }
+  
+  mobileMenuBtn.addEventListener('click', openMobileMenu);
+  mobileMenuClose.addEventListener('click', closeMobileMenu);
+  mobileMenu.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Mobile submenu toggles
+  const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
+  mobileNavToggles.forEach(toggle => {
+    toggle.addEventListener('click', function() {
+      const submenu = this.nextElementSibling;
+      const icon = this.querySelector('.material-symbols-outlined');
+      
+      if (submenu.style.maxHeight && submenu.style.maxHeight !== '0px') {
+        submenu.style.maxHeight = '0px';
+        icon.style.transform = 'rotate(0deg)';
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+});
+</script>
+<div class="relative w-full overflow-hidden bg-gradient-to-b from-blue-100 to-white dark:from-primary-dark dark:to-background-dark" style="height: 385px;">
+<img alt="Space background" class="absolute inset-0 w-full h-full object-cover pointer-events-none" src="space/1.png"/>
+<div class="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
+<div class="relative z-10 flex flex-col items-center justify-center" style="height: 328px;">
+<div class="text-center px-4">
+<p class="text-5xl md:text-6xl font-black leading-tight tracking-[-0.03em] text-white">Research</p>
+</div>
+</div>
+<div class="relative z-10 border-b border-gray-200 dark:border-gray-700 bg-black/60 dark:bg-black/60" style="height: 57px;">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+<nav aria-label="Research Tabs" class="segmented-control flex justify-center max-w-5xl mx-auto w-full">
+<a class="group py-2.5 active" href="#research-area">Research Area</a>
+</nav>
+</div>
+</div>
+</div>
+<main class="w-full mx-auto px-4 sm:px-6 lg:px-8 pt-16 py-12" style="max-width: 1600px;">
+<div class="flex flex-col gap-12">
+<div class="flex-1">
+<section id="research-area" style="width: 100%; max-width: 1600px; margin: 0 auto; overflow-x: visible;">
+<h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Research Area</h2>
+<div class="journal-tabs">
+<button class="active" onclick="switchResearchTab('remote-sensing')">Remote Sensing</button>
+<button onclick="switchResearchTab('ai-monitoring')">AI-based Environmental Monitoring</button>
+<button onclick="switchResearchTab('geospatial-fusion')">Geospatial Data Fusion</button>
+</div>
+<div class="mx-auto px-4" style="max-width: 1600px;">
+<div id="remote-sensing" class="journal-content active" style="padding-top: 3rem;">
+      <div class="flex justify-center mb-8">
+        <!-- 이 영역은 research/sections/remote-sensing-slider.html에서 자동으로 로드됩니다 -->
+        <div id="remote-sensing-slider-container"></div>
+      </div>
+</div>
+<div id="ai-monitoring" class="journal-content" style="padding-top: 3rem;">
+      <div class="flex justify-center mb-8">
+        <!-- 이 영역은 research/sections/ai-monitoring-slider.html에서 자동으로 로드됩니다 -->
+        <div id="ai-monitoring-slider-container"></div>
+      </div>
+</div>
+<div id="geospatial-fusion" class="journal-content" style="padding-top: 3rem;">
+      <div class="flex justify-center mb-8">
+        <!-- 이 영역은 research/sections/geospatial-fusion-slider.html에서 자동으로 로드됩니다 -->
+        <div id="geospatial-fusion-slider-container"></div>
+      </div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="footer">
+<div class="container">
+<div class="ai-rs-lab-logo"></div>
+<div class="frame">
+<div class="heading-address">ADDRESS</div>
+<p class="text-wrapper">부산광역시 남구 용소로 45, 환경해양관(B14) 613호, 인공지능 원격탐사 연구실</p>
+<p class="text-wrapper">Pukyong National University B14, Room 613, 45 Yongso-ro, Nam-gu, Busan 48513, Republic of Korea</p>
+</div>
+<div class="div">
+<div class="heading-contact">CONTACT</div>
+<div class="text-wrapper-2">modconfi@pknu.ac.kr</div>
+</div>
+<div class="horizontal-border"><p class="p">© 2024 ai.rs.lab. All Rights Reserved.</p></div>
+</div>
+</footer>
+</div>
+<script>
+  // 드롭다운 메뉴 링크 클릭 시 빠르게 사라지게 하기
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownLinks = document.querySelectorAll('.mega-dropdown a');
+    const dropdown = document.querySelector('.mega-dropdown');
+    const navbar = document.querySelector('.navbar.group');
+    
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        if (dropdown) {
+          dropdown.style.transition = 'opacity 0.1s ease-in-out, visibility 0.1s ease-in-out';
+          dropdown.style.opacity = '0';
+          dropdown.style.visibility = 'hidden';
+        }
+      });
+    });
+  });
+
+  // 연구분야 외부 슬라이더 로드 및 초기화
+  document.addEventListener('DOMContentLoaded', function() {
+    // Remote Sensing 슬라이더 로드
+    loadSliderSection('remote-sensing');
+    // AI Monitoring 슬라이더 로드
+    loadSliderSection('ai-monitoring');
+    // Geospatial Fusion 슬라이더 로드
+    loadSliderSection('geospatial-fusion');
+    
+    function loadSliderSection(sectionName) {
+      const container = document.getElementById(sectionName + '-slider-container');
+      if (!container) return;
+      
+      // 섹션명을 파일명으로 매핑
+      const fileNameMap = {
+        'remote-sensing': 'sub3-1',
+        'ai-monitoring': 'sub3-2',
+        'geospatial-fusion': 'sub3-3'
+      };
+      const fileName = fileNameMap[sectionName];
+      
+      fetch('research/sections/' + fileName + '-slider.html')
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to load slider');
+          return response.text();
+        })
+        .then(html => {
+          container.innerHTML = html;
+          // 로드 완료 후 해당 컨테이너의 슬라이더만 초기화
+          initializeSliderForContainer(container);
+        })
+        .catch(error => {
+          console.error('Error loading slider:', error);
+          container.innerHTML = '<p class="text-center text-gray-500">슬라이더를 로드하는 중 오류가 발생했습니다.</p>';
+        });
+    }
+    
+    function initializeSliderForContainer(container) {
+      // 해당 컨테이너 내부의 슬라이드만 선택
+      const sliderContainer = container.querySelector('.research-slider-container');
+      if (!sliderContainer) return;
+      
+      const slides = sliderContainer.querySelectorAll('.research-slide');
+      const prevBtn = sliderContainer.querySelector('.research-prev');
+      const nextBtn = sliderContainer.querySelector('.research-next');
+
+      if (!slides.length || !prevBtn || !nextBtn) return;
+
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        slides.forEach((img, i) => {
+          if (i === index) {
+            img.classList.remove('hidden');
+          } else {
+            img.classList.add('hidden');
+          }
+        });
+      }
+
+      prevBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      nextBtn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+      });
+
+      // 초기 상태 설정
+      showSlide(currentIndex);
+    }
+  });
+</script>
+</body></html>
+

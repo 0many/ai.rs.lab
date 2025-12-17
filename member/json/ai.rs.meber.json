@@ -1,0 +1,156 @@
+{
+  "researchers": [
+    {
+      "name": "Hyungwoo Kim",
+      "title": "Principal Engineer",
+      "email": "kalituma@gmail.com",
+      "photo": "member/증명사진/김형우.png",
+      "interests": ["Jack of all trades"]
+    },
+    {
+      "name": "Nari Kim",
+      "title": "Research Professor",
+      "email": "kimnari@pknu.ac.kr",
+      "photo": "member/증명사진/김나리.jpg",
+      "interests": ["AI based Predictive Modeling of SM and NEE"]
+    },
+    {
+      "name": "Jihye Ahn",
+      "title": "Research Professor",
+      "email": "ongpong@pknu.ac.kr",
+      "photo": "member/증명사진/안지혜.jpg",
+      "interests": ["Sea Surface Temperature Estimation", "Satellite Image Processing"]
+    },
+    {
+      "name": "Yungyo Im",
+      "title": "Researcher",
+      "email": "dbsry129@pukyong.ac.kr",
+      "photo": "member/증명사진/임윤교.jpg",
+      "interests": ["AI-based Feature Matching", "AI-based Image Process(CV)"]
+    },
+    {
+      "name": "Riwon Kim",
+      "title": "Researcher",
+      "email": "rxwxnee@gmail.com",
+      "photo": "member/증명사진/김리원.jpg",
+      "interests": ["TBD"]
+    },
+    {
+      "name": "Jiah Jang",
+      "title": "Researcher",
+      "email": "jangjiah12@gmail.com",
+      "photo": "member/증명사진/장지아.jpg",
+      "interests": ["TBD"]
+    },
+    {
+      "name": "Jaeung Sim",
+      "title": "Researcher",
+      "email": "tlawodnd1325@naver.com",
+      "photo": "member/증명사진/심재웅.jpg",
+      "interests": ["Vision-Language Model", "Computer Vision"],
+      "github": "https://github.com/simjw0223?tab=repositories"
+    }
+  ],
+  "phd_students": [
+    {
+      "name": "Youjeong Youn",
+      "title": "Ph.D. Candidate",
+      "email": "dbwjd0757@pukyong.ac.kr",
+      "photo": "member/증명사진/윤유정.png",
+      "interests": ["Advanced AI for Geospatial Data Integrity", "AI-based Modeling for Environmental Prediction"],
+      "cv": "member/CV/윤유정_CV.pdf"
+    },
+    {
+      "name": "Jonggu Kang",
+      "title": "Integrated Ph.D. Candidate",
+      "email": "gu7529@pukyong.ac.kr",
+      "photo": "member/증명사진/강종구.jpg",
+      "interests": ["AI-based Geospatial Feature Detection", "Deep Learning-based Satellite Data Processing"]
+    },
+    {
+      "name": "Seoyeon Kim",
+      "title": "Ph.D. Candidate",
+      "email": "ksyvv08@pukyong.ac.kr",
+      "photo": "member/증명사진/김서연.jpg",
+      "interests": ["AI-based Atmospheric Correction"]
+    },
+    {
+      "name": "Yemin Jeong",
+      "title": "Ph.D. Candidate",
+      "email": "jym6677@pukyong.ac.kr",
+      "photo": "member/증명사진/정예민.png",
+      "interests": ["AI-based Image Process(CV)", "AI-driven Data Modeling(ML)"],
+      "github": "https://github.com/Yemin-j?tab=repositories"
+    },
+    {
+      "name": "Geunah Kim",
+      "title": "Ph.D. Candidate",
+      "email": "talkingphotato@gmail.com",
+      "photo": "member/증명사진/김근아.jpg",
+      "interests": ["Spatiotemporal Video Prediction"]
+    },
+    {
+      "name": "Soyeon Choi",
+      "title": "Ph.D. Candidate",
+      "email": "unggungqe@gmail.com",
+      "photo": "member/증명사진/최소연.jpg",
+      "interests": ["Synthetic Aperture Radar (SAR) Image Processing", "AI-based Remote Sensing"]
+    }
+  ],
+  "masters_students": [
+    {
+      "name": "HyoJu Park",
+      "title": "Master's Candidate",
+      "email": "gywn_1230@pukyong.ac.kr",
+      "photo": "member/증명사진/박효주.jpg",
+      "interests": ["TBD"]
+    },
+    {
+      "name": "JaeSeong Park",
+      "title": "Master's Candidate",
+      "email": "js513jj@naver.com",
+      "photo": "member/증명사진/박재성.jpg",
+      "interests": ["SAR-EO Data Fusion"]
+    }
+  ],
+  "undergrad_students": [
+    {
+      "name": "DongWoo Ha",
+      "title": "",
+      "email": "hdw0415@pukyong.ac.kr",
+      "photo": null,
+      "interests": ["TBD"]
+    },
+    {
+      "name": "Suji Lee",
+      "title": "",
+      "email": "suzii@pukyong.ac.kr",
+      "photo": null,
+      "interests": ["TBD"]
+    }
+  ],
+  "alumni": {
+    "phd": [
+      "김나리(2018), 국립부경대학교",
+      "김대선(2018), 한국해양과학기술원",
+      "김광진(2020), 지오시스템리서치",
+      "조성억(2022), 국립부경대학교",
+      "이수진(2023), 국립농업과학원",
+      "안지혜(2023), 국립부경대학교"
+    ],
+    "masters": [
+      "이하정(2012), BNK시스템",
+      "이승록(2012), 지오시스템리서치",
+      "김  구(2015), 국립환경과학원",
+      "공인학(2018), 한국국토정보공사",
+      "김영호(2019), 나라스페이스테크놀로지",
+      "김지원(2019), CJ 대한통운",
+      "박성욱(2019), 나라스페이스테크놀로지",
+      "윤예슬(2020), 나라스페이스테크놀로지",
+      "조수빈(2022), 나라스페이스테크놀로지",
+      "박강현(2024), 한국항공우주연구원",
+      "서영민(2025), 우주항공청"
+    ]
+  }
+}
+

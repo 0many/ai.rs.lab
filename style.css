@@ -19,7 +19,7 @@
   margin-top: -1px;
   height: 104px;
   width: 100%;
-  max-width: 1536px;
+  max-width: 1587px;
   display: flex;
   justify-content: center;
 }
@@ -188,6 +188,77 @@
   color: #ffffff !important;
 }
 
+/* ==================== Index.html 전용 스타일 ==================== */
+
+/* 히어로 섹션 배경 이미지 */
+.hero-background {
+  background-image: url("space/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left top;
+  height: calc(88vh + 105px);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-top: -105px;
+  padding-top: 105px;
+}
+
+/* 히어로 텍스트 컨테이너 */
+.hero-text-container {
+  max-width: 90%;
+  padding-left: 10.5%;
+  margin-top: -130px;
+}
+
+/* 히어로 메인 텍스트 (Orbitron 폰트) */
+.hero-main-text {
+  font-family: 'Orbitron', system-ui, sans-serif;
+  color: white;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* About/Research/Publications 섹션 공통 컨테이너 */
+.section-content-container {
+  max-width: 85%;
+}
+
+/* About 섹션 타이틀 */
+.section-title-large {
+  font-family: 'Lexend', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* About 섹션 서브타이틀 */
+.section-subtitle {
+  font-family: 'Lexend', 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* View more 버튼 */
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+/* 그라데이션 박스 내부 View more (흰색 호버) */
+.hero-gradient-box .view-more-btn:hover,
+.hero-gray-box .view-more-btn:hover {
+  color: white;
+}
+
+/* 라이트 박스 내부 View more (검은색 호버) */
+.hero-light-box .view-more-btn:hover {
+  color: #111827;
+}
+
 /* Mega Menu Dropdown Styles */
 .mega-dropdown {
   position: fixed;
@@ -217,7 +288,8 @@
 
 .mega-dropdown > div {
   width: 100%;
-  max-width: 1536px;
+  max-width: 90%;
+  padding: 0 2%;
   height: 100%;
   position: relative;
   display: flex;
@@ -320,7 +392,8 @@
   margin-top: -1.0px;
   height: 400px;
   width: 100%;
-  max-width: 1536px;
+  max-width: 90%;
+  padding: 0 2%;
   display: flex;
   flex-direction: column;
 }
@@ -485,3 +558,63 @@
   margin-left: calc(50% - 50vw);
   background-color: #F5F7F8;     /* 요청한 색 (#F5F7F8) */
 }
+
+/* 연구분야 이미지 슬라이더 */
+#ai-monitoring-slider-container,
+#remote-sensing-slider-container,
+#geospatial-fusion-slider-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.research-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.research-slide {
+  height: auto;
+  margin-bottom: 2rem;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.research-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.research-slide-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.research-prev {
+  left: -3rem;
+}
+
+.research-next {
+  right: -3rem;
+}
+
