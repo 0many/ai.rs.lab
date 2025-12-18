@@ -21,10 +21,13 @@
       .segmented-control {
           display: flex;
           gap: 0.25rem;
+          justify-content: center;
+          width: auto;
+          margin: 0 auto;
       } 
       
       .segmented-control a {
-          flex: 1 1 0;
+          flex: 0 0 auto;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -34,7 +37,7 @@
           transition: all 0.2s ease-in-out;
           color: #e2e8f0;
           white-space: nowrap;
-          min-width: 0;
+          min-width: fit-content;
       }
       
       .dark .segmented-control a {
@@ -253,6 +256,45 @@
         }
       });
     </script>
+<script>
+      // 모바일에서만 Contact 섹션 주소를 두 줄로 나누기
+      document.addEventListener('DOMContentLoaded', function() {
+        function formatContactAddresses() {
+          const contactSection = document.querySelector('section#contact');
+          if (!contactSection) return;
+          
+          const isMobile = window.innerWidth <= 640;
+          const addressParagraphs = contactSection.querySelectorAll('.text-left.ml-7 p.text-gray-700, .text-left.ml-7 p.text-gray-300');
+          
+          addressParagraphs.forEach(p => {
+            const originalText = p.getAttribute('data-original') || p.textContent;
+            if (!p.getAttribute('data-original')) {
+              p.setAttribute('data-original', originalText);
+            }
+            
+            if (isMobile) {
+              // 모바일: 두 줄로 나누기
+              let formattedText = originalText;
+              // 한글 주소
+              if (formattedText.includes('부산광역시 남구 용소로 45,')) {
+                formattedText = formattedText.replace('부산광역시 남구 용소로 45,', '부산광역시 남구 용소로 45,<br/>');
+              }
+              // 영어 주소
+              if (formattedText.includes('Pukyong National University B14,')) {
+                formattedText = formattedText.replace('Pukyong National University B14,', 'Pukyong National University B14<br/>');
+              }
+              p.innerHTML = formattedText;
+            } else {
+              // 데스크탑: 원본 텍스트 유지
+              p.textContent = originalText;
+            }
+          });
+        }
+        
+        formatContactAddresses();
+        window.addEventListener('resize', formatContactAddresses);
+      });
+    </script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-[#101418] dark:text-background-light" oncontextmenu="return false;" ondragstart="return false;">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
@@ -307,7 +349,7 @@
 </div>
 </nav>
 <!-- Mobile Menu Button -->
-<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent dark:hover:text-accent transition-colors" style="position: absolute; right: 20px;">
+<button id="mobile-menu-btn" class="lg:hidden flex items-center justify-center w-10 h-10 text-[#101418] dark:text-white hover:text-accent dark:hover:text-accent transition-colors">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
@@ -410,8 +452,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <div class="relative z-10 border-b border-gray-200 dark:border-gray-700 bg-black/60 dark:bg-black/60" style="height: 57px;">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-<nav aria-label="About Tabs" class="segmented-control flex justify-center max-w-5xl mx-auto w-full">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+<nav aria-label="About Tabs" class="segmented-control flex justify-center">
 <a class="group py-2.5" href="#about">About Us</a>
 <a class="group py-2.5" href="#contact">Contact</a>
 </nav>

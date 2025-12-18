@@ -1,0 +1,947 @@
+[
+  {
+    "id": 135,
+    "title": "Sentinel-2 영상과 기상모델 자료를 이용한 기계학습 기반의 벼논 토양염분 추정",
+    "info": "기후연구 20(3), 143-163, Sep 2025",
+    "year": 2025,
+    "link": "https://doi.org/10.14383/cri.2025.20.3.143"
+  },
+  {
+    "id": 134,
+    "title": "Semantic Segmentation of Fire Fronts in Helicopter Imagery Using Vision Transformer Models",
+    "info": "Korean Journal of Remote Sensing 41(2), 375-385, Apr 2025",
+    "year": 2025,
+    "link": "https://doi.org/10.14383/cri.2025.20.3.143"
+  },
+  {
+    "id": 133,
+    "title": "Machine Learning-Based Mapping of Daily Methane Concentration in Rice Paddies Using Meteorological Data and Satellite Images: A Case of South Korea",
+    "info": "Korean Journal of Remote Sensing 40(6), 1095-1108, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.18"
+  },
+  {
+    "id": 132,
+    "title": "국토위성영상을 이용한 건물과 도로 학습데이터셋 구축 및 딥러닝 모델 개발",
+    "info": "대한원격탐사학회지 40(6), 1163-1176, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.23"
+  },
+  {
+    "id": 131,
+    "title": "Correlation-Based Evaluation of GEMS Satellite Products Using Environmental and Meteorological Measurements",
+    "info": "Korean Journal of Remote Sensing 40(6), 1229-1252, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.28"
+  },
+  {
+    "id": 130,
+    "title": "Development of Administrative District-Based Water Body Monitoring System Using Sentinel-1 SAR and Swin Transformer in South Korea",
+    "info": "Korean Journal of Remote Sensing 40(6), 1177-1193, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.24"
+  },
+  {
+    "id": 129,
+    "title": "위성영상, 기상자료 및 지형자료를 이용한 AI 기반 논벼 수확량 예측: 2000–2023년 우리나라 시군단위 사례연구",
+    "info": "대한원격탐사학회지 40(6), 1195-1208, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.25"
+  },
+  {
+    "id": 128,
+    "title": "Transformer-Based Deep Learning Approach for Wildfire Burn Severity Estimation Using Drone Imagery in South Korea",
+    "info": "Korean Journal of Remote Sensing 40(6-1), 1051-1065, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.15"
+  },
+  {
+    "id": 127,
+    "title": "순환신경망 및 트랜스포머 구조의 다변량 시계열모델을 이용한 농업용 저수지의 저수율 예측",
+    "info": "대한원격탐사학회지 40(6-1), 1149-1162, Dec 2024",
+    "year": 2024,
+    "link": "https://doi.org/10.7780/kjrs.2024.40.6.1.22"
+  },
+  {
+    "id": 126,
+    "title": "Sentinel-1 레이더 식생지수와 AutoML을 이용한 Sentinel-2 NDVI 결측화소 복원",
+    "info": "대한원격탐사학회지 39(6), 1341-1352, Dec 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.6.1.14"
+  },
+  {
+    "id": 125,
+    "title": "딥러닝과 Landsat 8 영상을 이용한 캘리포니아 산불 피해지 탐지",
+    "info": "대한원격탐사학회지 39(6), 1413-1425, Dec 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.6.1.19"
+  },
+  {
+    "id": 124,
+    "title": "6SV 기반의 AI 모델을 이용한 국토위성 영상의 대기보정",
+    "info": "국토지리학회지 57(4), 587-595, Dec 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.22905/kaopqj.2023.57.4.16"
+  },
+  {
+    "id": 123,
+    "title": "정지궤도 환경위성과 인공지능을 이용한 산불 연기 탐지",
+    "info": "기후연구 18(4), 245-262, Dec 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.14383/cri.2023.18.4.245"
+  },
+  {
+    "id": 122,
+    "title": "Sentinel-2 위성과 국토위성에서의 딥러닝 기반 초해상화 기법 비교 연구",
+    "info": "국토지리학회지 57(4), 541-555, Dec 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.22905/kaopqj.2023.57.4.13"
+  },
+  {
+    "id": 121,
+    "title": "Swin Transformer와 Sentinel-1 영상을 이용한 우리나라 저수지의 수체 탐지",
+    "info": "대한원격탐사학회지 39(5), 949-965, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.3.6"
+  },
+  {
+    "id": 120,
+    "title": "인공지능 기반의 GEMS 산불연기 및 황사 탐지",
+    "info": "대한원격탐사학회지 39(5), 859-873, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.2.10"
+  },
+  {
+    "id": 119,
+    "title": "YOLO를 이용한 SAR 영상의 선박 객체 탐지: 편파별 모델 구성과 정확도 특성 분석",
+    "info": "대한원격탐사학회지 39(5), 997-1008, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.3.9"
+  },
+  {
+    "id": 118,
+    "title": "기온감률 보정과 최적크리깅을 이용한 산악기상관측망 기온자료의 우리나라 500미터 격자화",
+    "info": "대한원격탐사학회지 39(5), 715-727, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.1.19"
+  },
+  {
+    "id": 117,
+    "title": "수중영상을 이용한 저서성 해양무척추동물의 실시간 객체 탐지: YOLO 모델과 Transformer 모델의 비교평가",
+    "info": "대한원격탐사학회지 39(5), 909-919, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.3.3"
+  },
+  {
+    "id": 116,
+    "title": "6SV2.1과 GK2A AOD를 이용한 기계학습 기반의 Sentinel-2 영상 대기보정",
+    "info": "대한원격탐사학회지 39(5), 1061-1067, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.3.13"
+  },
+  {
+    "id": 115,
+    "title": "PlanetScope 영상을 이용한 해양 유출유의 색상 특성 분석",
+    "info": "대한원격탐사학회지 38(5), 875-883, Oct 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.7780/kjrs.2023.39.5.2.11"
+  },
+  {
+    "id": 114,
+    "title": "이상기상 조건에서 AutoML 논벼수확 모델의 강건성 평가",
+    "info": "기후연구 18(1), 41-49, Mar 2023",
+    "year": 2023,
+    "link": "https://doi.org/10.14383/cri.2023.18.1.41"
+  },
+  {
+    "id": 113,
+    "title": "U-Net과 HRNetV2 모델을 이용한 Sentinel-1 SAR 영상의 홍수탐지",
+    "info": "국토지리학회지 56(4), 409-419, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 112,
+    "title": "위성기반 산불피해지수를 이용한 북한지역 산불피해지 분석",
+    "info": "대한원격탐사학회지 38(6), 1861-1869, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 111,
+    "title": "산불위험지수 지역최적화를 통한 2022년 북한산불 사례분석",
+    "info": "대한원격탐사학회지 38(6), 1847-1859, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 110,
+    "title": "DeepLabV3+와 Swin Transformer 모델을 이용한 Sentinel-2 영상의 구름탐지",
+    "info": "대한원격탐사학회지 38(6), 1743-1747, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 109,
+    "title": "드론영상과 YOLOv7x 모델을 이용한 활성산불 객체탐지",
+    "info": "대한원격탐사학회지 38(6), 1737-1741, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 108,
+    "title": "YOLOv5와 YOLOv7 모델을 이용한 해양침적쓰레기 객체탐지 비교평가",
+    "info": "대한원격탐사학회지 38(6), 1643-1652, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 107,
+    "title": "DeepLabV3+ 모델을 이용한 PlanetScope 영상의 해상 유출유 탐지",
+    "info": "대한원격탐사학회지 38(6), 1623-1631, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 106,
+    "title": "GK2A 일단위 NDVI의 과소추정 노이즈 실시간 보정",
+    "info": "대한원격탐사학회지 38(6), 1301-1314, Dec 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 105,
+    "title": "GEMS 영상과 기계학습을 이용한 산불 연기 탐지",
+    "info": "대한원격탐사학회지 38(5), 967-977, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 104,
+    "title": "기상모델자료와 기계학습을 이용한 GK-2A/AMI Hourly AOD 산출물의 결측화소 복원",
+    "info": "대한원격탐사학회지 38(5), 953-966, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 103,
+    "title": "Sentinel-1 SAR 영상과 AI 기법을 이용한 국내 중소규모 농업저수지의 수표면적 산출",
+    "info": "대한원격탐사학회지 38(5), 925-938, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 102,
+    "title": "HRNet-OCR과 Swin-L 모델을 이용한 조식동물 서식지 수중영상의 의미론적 분할",
+    "info": "대한원격탐사학회지 38(5), 913-924, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 101,
+    "title": "딥러닝을 이용한 원격탐사 영상분석 연구동향",
+    "info": "대한원격탐사학회지 38(5), 819-834, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 100,
+    "title": "GK2A AOD를 이용한 Sentinel-2 영상의 대기보정: FLAASH, Sen2Cor, 6SV1.1, 6SV2.1의 비교평가",
+    "info": "대한원격탐사학회지 38(5), 647-660, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 99,
+    "title": "MODIS와 ASOS 자료를 이용한 식물계절 모델링",
+    "info": "대한원격탐사학회지 38(5), 627-646, Oct 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 98,
+    "title": "Development of Potential Water Stress Index (PWSI) for Drought Monitoring Using Satellite Precipitation and Evapotranspiration Data",
+    "info": "기후연구 17(3), 199-216, Sep 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 97,
+    "title": "Landsat 8 영상을 이용한 산불피해지 시계열변화 분석방법에 관한 연구",
+    "info": "한국지도학회지 22(2), 17-26, Apr 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 96,
+    "title": "GK2A AMI를 이용한 한반도 식생건강지수 산출",
+    "info": "대한원격탐사학회지 38(2), 179-188, Apr 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 95,
+    "title": "정규크리깅을 이용한 우리나라 주변해역 일평균 해수면온도 격자지도화 및 내삽정확도 분석",
+    "info": "한국측량학회지 50(1), 35-46, Feb 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 94,
+    "title": "Statistical analyses of the flowering dates of cherry blossom and the peak dates of maple leaves in South Korea using ASOS and MODIS data",
+    "info": "Korean Journal of Remote Sensing 38(1), 57-72, Feb 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 93,
+    "title": "Atmospheric correction of Sentinel-2 images using enhanced AOD information",
+    "info": "Korean Journal of Remote Sensing 38(1), 83-101, Feb 2022",
+    "year": 2022,
+    "link": "#"
+  },
+  {
+    "id": 92,
+    "title": "통계기법을 이용한 천리안위성 2A호 일일 해수면온도 산출물의 이상화소 검출 및 결측화소 복원 실험",
+    "info": "기후연구 16(4), 327-346, Dec 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 91,
+    "title": "Landsat 8 기반 SPARCS 데이터셋을 이용한 U-Net 구름탐지",
+    "info": "대한원격탐사학회지 37(5), 1149-1161, Oct 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 90,
+    "title": "Sentinel-1 SAR 영상과 인공지능 기법을 이용한 연안해역의 고해상도 해상풍 산출",
+    "info": "대한원격탐사학회지 37(5), 1187-1198, Oct 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 89,
+    "title": "Spatial gap-filling of hourly AOD data from Himawari-8 satellite using DCT (Discrete Cosine Transform) and FMM (Fast Marching Method)",
+    "info": "Korean Journal of Remote Sensing 37(4), 777-788, Aug 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 88,
+    "title": "베리오그램 최적화 기반의 정규크리깅을 이용한 전국 에어코리아 PM10 자료의 일평균 격자지도화 및 내삽정확도 검증",
+    "info": "대한원격탐사학회지 37(3), 379-394, Jun 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 87,
+    "title": "우리나라에서 AERONET 태양광도계 자료를 이용한 다종위성 AOD 산출물 비교평가: MODIS, VIIRS, Himawari-8, Sentinel-3의 사례연구",
+    "info": "대한원격탐사학회지 37(3), 543-557, Jun 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 86,
+    "title": "농업적 활용을 위한 산란일사와 직달일사 관측 자료: 나주에서 2019년 5월부터 2020년 11월까지",
+    "info": "한국농림기상학회지 23(2), 134-140, Jun 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 85,
+    "title": "ASOS와 ERA5 자료를 이용한 기계학습 기반의 폭염지수 예측가능성 평가: 1979-2020년 우리나라의 사례연구",
+    "info": "기후연구 16(2), 147-156, Jun 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 84,
+    "title": "우리나라 시군단위 벼 수확량 예측을 위한 다종 기상자료의 비교평가",
+    "info": "대한원격탐사학회지 37(2), 337-357, Apr 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 83,
+    "title": "논벼에서 관측된 태양 유도 엽록소 형광 자료: 나주에서 2020년 6월 10일부터 10월 5일까지",
+    "info": "한국농림기상학회지 23(1), 82-88, Mar 2021",
+    "year": 2021,
+    "link": "#"
+  },
+  {
+    "id": 82,
+    "title": "기계학습 기반의 우리나라 익일 PM10 농도 예측지도 산출",
+    "info": "기후연구 15(4), 269-285, Dec 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 81,
+    "title": "Sentinel-2 영상과 자기조직화 분류기법을 활용한 산사태 피해지 탐지: 2020년 곡성 산사태를 사례로",
+    "info": "한국지리정보학회지 23(4), 253-265, Dec 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 80,
+    "title": "격자자료 결측복원을 위한 DCT-PLS 기법의 활용성 평가",
+    "info": "대한원격탐사학회지 36(6), 1407-1419, Dec 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 79,
+    "title": "국지예보모델과 위성영상을 이용한 극상림 플럭스 관측의 공간연속면 확장 및 우리나라 산림의 일일 탄소흡수능 격자자료 산출",
+    "info": "대한원격탐사학회지 36(6), 1449-1463, Dec 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 78,
+    "title": "우리나라 농지의 기준증발산 격자자료 비교평가: 2016-2019년의 사례연구",
+    "info": "대한원격탐사학회지 36(6), 1465-1483, Dec 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 77,
+    "title": "Landsat 8 OLI 영상을 이용한 산불탐지: 2019년 호주 산불을 사례로",
+    "info": "대한원격탐사학회지 36(5), 775-784, Oct 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 76,
+    "title": "위성영상과 자기조직화 분류기법을 이용한 산림생태계교란 탐지: 우박 피해지와 매미나방 피해지의 사례연구",
+    "info": "대한원격탐사학회지 36(5), 835-846, Oct 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 75,
+    "title": "Sentinel-2 영상과 클러스터링 기법을 이용한 산불피해강도 분류: 2020년 안동 산불을 사례로",
+    "info": "기후연구 15(3), 173-185, Sep 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 74,
+    "title": "Prediction of daily PM10 concentration for Air Korea stations using artificial intelligence with LDAPS weather data, MODIS AOD, and Chinese air quality data",
+    "info": "Korean Journal of Remote Sensing 36(4), 573-586, Aug 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 73,
+    "title": "Ensemble downscaling of soil moisture data using BMA and ATPRK",
+    "info": "Korean Journal of Remote Sensing 36(4), 587-607, Aug 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 72,
+    "title": "Landsat 8 영상을 이용한 심층신경망 기반의 지표면온도 산출",
+    "info": "대한원격탐사학회지 36(3), 487-501, Jun 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 71,
+    "title": "UV-VIS 초분광 위성센서 모의복사휘도를 활용한 다양한 관측환경에서의 에어로솔 유효고도에 대한 O4 대기질량인자 민감도 조사",
+    "info": "대한원격탐사학회지 36(2), 155-165, Apr 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 70,
+    "title": "심층신경망을 이용한 중국의 쌀 수확량 예측 실험",
+    "info": "기후연구 15(1), 35-47, Mar 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 69,
+    "title": "Detection of Wildfire-Damaged Areas Using Kompsat-3 Image: A Case of the 2019 Unbong Mountain Fire in Busan, South Korea",
+    "info": "Korean Journal of Remote Sensing 36(1), 29-39, Feb 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 68,
+    "title": "An Artificial Intelligence Method for the Prediction of Near- and Off-Shore Fish Catch Using Satellite and Numerical Model Data",
+    "info": "Korean Journal of Remote Sensing 36(1), 41-53, Feb 2020",
+    "year": 2020,
+    "link": "#"
+  },
+  {
+    "id": 67,
+    "title": "Comparison of land surface temperatures from near-surface measurement and satellite-based product",
+    "info": "Korean Journal of Remote Sensing 35(4), 609-616, Aug 2019",
+    "year": 2019,
+    "link": "#"
+  },
+  {
+    "id": 66,
+    "title": "기상예보모델자료와 위성자료를 이용한 산불위험지수 개발 및 2019년 4월 강원 산불 사례에의 적용",
+    "info": "대한원격탐사학회지 35(2), 337-342, Apr 2019",
+    "year": 2019,
+    "link": "#"
+  },
+  {
+    "id": 65,
+    "title": "산불피해지 탐지를 위한 위성기반 산림고사지수 개발 및 2019년 4월 강원 산불 사례에의 적용",
+    "info": "대한원격탐사학회지 35(2), 343-346, Apr 2019",
+    "year": 2019,
+    "link": "#"
+  },
+  {
+    "id": 64,
+    "title": "국지예보모델자료와 위성자료를 이용한 딥러닝 기반의 농지 증발산량 산출 및 지도화",
+    "info": "한국지도학회지 18(3), 105-116, Dec 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 63,
+    "title": "앙상블 베이지안 모델 평균화 기법을 이용한 격자형 기상자료 합성장 산출",
+    "info": "국토지리학회지 52(4), 581-591, Dec 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 62,
+    "title": "고해상도 위성영상과 Fully Convolutional Network를 활용한 산림재해 피해지 탐지",
+    "info": "한국사진지리학회지 28(4), 89-103, Dec 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 61,
+    "title": "위성기반 가뭄지수의 상호비교를 통한 한반도 농업가뭄 분석",
+    "info": "기후연구 13(4), 1-22, Dec 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 60,
+    "title": "라이다 점군의 효율적 검색을 위한 CUDA 기반 옥트리 알고리듬 구현",
+    "info": "대한원격탐사학회지 34(6), 1009-1024, Dec 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 59,
+    "title": "Sentinel-2와 RapidEye 위성의 Red Edge 밴드를 활용한 담수역 클로로필-a 농도 추정",
+    "info": "국토지리학회지 52(3), 445-454, Sep 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 58,
+    "title": "기상모델 자료와 소형선박용 기상관측기구 자료의 융합활용을 위한 모바일 지리적시각화 서비스에 관한 연구",
+    "info": "국토지리학회지 52(1), 139-148, Mar 2018",
+    "year": 2018,
+    "link": "#"
+  },
+  {
+    "id": 57,
+    "title": "딥러닝을 이용한 남한 500미터 해상도의 일단위 토양수분 산출",
+    "info": "한국지도학회지 17(3), 109-121, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 56,
+    "title": "히마와리 위성의 산불방사열에너지 자료를 이용한 산불배출가스 추정: 2017년 삼척 및 강릉 산불을 사례로",
+    "info": "대한원격탐사학회지 33(6), 1029-1040, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 55,
+    "title": "RCM 자료와 기계학습을 이용한 북극권 카라-바렌츠 해역의 해빙면적비 예측",
+    "info": "기후연구 12(4), 349-365, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 54,
+    "title": "기상기반 산불위험지수와 위성기반 지면건조지수의 우리나라 산불발생에 대한 민감도 분석",
+    "info": "지적과 국토정보 47(2), 107-120, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 53,
+    "title": "감마분포 EBMA를 이용한 위성기반 강우강도 합성장 산출",
+    "info": "한국지형공간정보학회지 25(4), 25-33, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 52,
+    "title": "Sentinel-1 SAR 데이터를 이용한 우리나라 농지의 토양수분 산출 실험",
+    "info": "대한원격탐사학회지 33(6), 947-960, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 51,
+    "title": "Sentinel-2 영상 기반의 FBI(Fire Burn Index) 개발 및 우리나라 산불피해지역 탐지 실험",
+    "info": "한국사진지리학회지 27(4), 187-202, Dec 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 50,
+    "title": "항공 초분광 영상을 이용한 광화학반사지수 이용 가능성 평가: 그림자 영향 및 대체 밴드를 중심으로",
+    "info": "대한원격탐사학회지 33(5), 507-519, Oct 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 49,
+    "title": "파노라마 영상을 이용한 특징점 탐지 알고리즘의 성능평가",
+    "info": "한국사진지리학회지 27(3), 103-113, Sep 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 48,
+    "title": "회귀크리깅을 이용한 AMSR2 토양수분자료의 다운스케일링",
+    "info": "한국지도학회지 17(2), 99-110, Aug 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 47,
+    "title": "EBMA를 이용한 CMIP 대기대순환모형의 일평균기온 앙상블 산출",
+    "info": "기후연구 12(2), 199-213, Jun 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 46,
+    "title": "동작인식 컨트롤 장치를 활용한 음성촉지도 제작에 관한 연구",
+    "info": "한국지도학회지 17(1), 15-23, Apr 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 45,
+    "title": "소상공인 날씨경영 지원을 위한 지리적 시각화 활용 방안에 관한 연구",
+    "info": "국토지리학회지 51(1), 11-21, Mar 2017",
+    "year": 2017,
+    "link": "#"
+  },
+  {
+    "id": 44,
+    "title": "MODIS 위성자료를 이용한 한반도 산불발생 GIS 데이터베이스 구축",
+    "info": "한국지도학회지 16(3), 129-137, Dec 2016",
+    "year": 2016,
+    "link": "#"
+  },
+  {
+    "id": 43,
+    "title": "히마와리 위성자료를 이용한 산불방사열에너지 산출",
+    "info": "한국지형공간정보학회지 24(4), 105-113, Dec 2016",
+    "year": 2016,
+    "link": "#"
+  },
+  {
+    "id": 42,
+    "title": "기상위험 조기경보를 위한 웹기반 표출시스템 구현",
+    "info": "한국지형공간정보학회지 24(4), 21-28, Dec 2016",
+    "year": 2016,
+    "link": "#"
+  },
+  {
+    "id": 41,
+    "title": "기후재분석자료 시계열모델링을 통한 곡물수확량 예측실험: 1960-2009년 미국 아이오와주 사례",
+    "info": "한국지도학회지 16(2), 115-126, Aug 2016",
+    "year": 2016,
+    "link": "#"
+  },
+  {
+    "id": 40,
+    "title": "Machine learning approaches to corn yield estimation using satellite images and climate data: A case of Iowa State",
+    "info": "Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography 34(4), 383-390, Aug 2016",
+    "year": 2016,
+    "link": "#"
+  },
+  {
+    "id": 39,
+    "title": "Statistical estimation of crop yields for the Midwestern United States using satellite images, climate datasets, and soil property maps",
+    "info": "Korean Journal of Remote Sensing 32(4), 383-401, Aug 2016",
+    "year": 2016,
+    "link": "#"
+  },
+  {
+    "id": 38,
+    "title": "Feasibility of Using an Automatic Lens Distortion Correction (ALDC) Camera in a Photogrammetric UAV System",
+    "info": "Journal of the Korean Society of Surveying, Geodesy, Photogrammetry and Cartography 33(6), 475-484, Dec 2015",
+    "year": 2015,
+    "link": "#"
+  },
+  {
+    "id": 37,
+    "title": "스마트폰 지도 제어를 위한 제스처 라이브러리 구현",
+    "info": "한국지도학회지 15(3), 39-48, Dec 2015",
+    "year": 2015,
+    "link": "#"
+  },
+  {
+    "id": 36,
+    "title": "천리안위성 해수면온도 3차산출물 생성기법 비교연구",
+    "info": "기후연구 10(1), 43-56, Mar 2015",
+    "year": 2015,
+    "link": "#"
+  },
+  {
+    "id": 35,
+    "title": "위성영상과 기후자료를 이용한 미중서부 옥수수와 콩의 수확량 추정",
+    "info": "기후연구 9(4), 313-327, Dec 2014",
+    "year": 2014,
+    "link": "#"
+  },
+  {
+    "id": 34,
+    "title": "위성자료를 이용한 한반도 산불정보 하이브리드 앱의 구현 및 활용",
+    "info": "한국지도학회지 14(3), 29-39, Dec 2014",
+    "year": 2014,
+    "link": "#"
+  },
+  {
+    "id": 33,
+    "title": "지도기반 내러티브 시각화를 통한 시공간정보 전달방안 연구",
+    "info": "국토지리학회지 48(4), 547-557, Dec 2014",
+    "year": 2014,
+    "link": "#"
+  },
+  {
+    "id": 32,
+    "title": "MODIS 해빙피복 기반의 가중치체계를 이용한 AMSR2 해빙면적비의 다운스케일링",
+    "info": "대한원격탐사학회지 30(5), 687-701, Oct 2014",
+    "year": 2014,
+    "link": "#"
+  },
+  {
+    "id": 31,
+    "title": "지면피복변화 핫스팟에서의 비점원 오염부하량 특성",
+    "info": "한국지도학회지 14(1), 77-91, Apr 2014",
+    "year": 2014,
+    "link": "#"
+  },
+  {
+    "id": 30,
+    "title": "웹서비스와 스마트폰앱을 이용한 연안해양모델 예측자료의 시각화시스템 구현",
+    "info": "한국공간정보학회지 22(2), 63-71, Apr 2014",
+    "year": 2014,
+    "link": "#"
+  },
+  {
+    "id": 29,
+    "title": "위성기반 가뭄지수의 EOF 분석: 내몽골 지역을 사례로",
+    "info": "기후연구 8(4), 309-319, Dec 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 28,
+    "title": "동아시아 정지궤도 기상위성의 산불탐지 비교실험",
+    "info": "기후연구 8(4), 281-289, Dec 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 27,
+    "title": "웹지도 이용자의 관심집중지역 추출을 위한 빅데이터 플랫폼 기반의 공간패턴 분석",
+    "info": "국토지리학회지 47(4), 443-451, Dec 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 26,
+    "title": "A smartphone application to recommend user-preferred driving routes using traffic pattern data",
+    "info": "Journal of the Korean Cartographic Association 13(3), 27-39, Dec 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 25,
+    "title": "3차원 건물지도와 전파도달모형을 이용한 도심부 GPS의 위치정확도 모의",
+    "info": "한국지도학회지 13(1), 87-97, Apr 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 24,
+    "title": "GPS 전파엄폐 탐측자료의 우주기상 활용방안",
+    "info": "위성정보통신학회지 8(1), 14-22, Mar 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 23,
+    "title": "시공간통계를 이용한 천리안 위성산출물의 품질관리방안",
+    "info": "기후연구 8(1), 45-53, Mar 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 22,
+    "title": "Implementation of a geo-semantic app by combining mobile user contexts with geographic ontologies",
+    "info": "Journal of Korea Spatial Information Society 21(1), 1-13, Feb 2013",
+    "year": 2013,
+    "link": "#"
+  },
+  {
+    "id": 21,
+    "title": "래스터 자료서비스를 위한 오픈API의 구현",
+    "info": "한국지도학회지 12(3), 45-53, Dec 2012",
+    "year": 2012,
+    "link": "#"
+  },
+  {
+    "id": 20,
+    "title": "시계열 위성자료를 위한 OGC 시간차원과 공간DBMS의 연계방안",
+    "info": "국토지리학회지 46(4), 515-524, Dec 2012",
+    "year": 2012,
+    "link": "#"
+  },
+  {
+    "id": 19,
+    "title": "ITU-R P.526을 지원하는 SEAMCAT 기반 전파간섭 평가도구 개발",
+    "info": "한국통신학회논문지 37C(9), 791-801, Sep 2012",
+    "year": 2012,
+    "link": "#"
+  },
+  {
+    "id": 18,
+    "title": "공간통계기법을 이용한 토지피복변화의 핫스팟 탐지",
+    "info": "대한원격탐사학회지 27(5), 601-611, Oct 2011",
+    "year": 2011,
+    "link": "#"
+  },
+  {
+    "id": 17,
+    "title": "Coupling server-side FOSS for geographical visualization and analysis on the web",
+    "info": "Journal of the Korean Cartographic Association 11(2), 91-100, Aug 2011",
+    "year": 2011,
+    "link": "#"
+  },
+  {
+    "id": 16,
+    "title": "개인스케줄과 지도서비스를 결합한 안드로이드 스마트폰앱의 구현",
+    "info": "한국지도학회지 10(2), 103-111, Dec 2010",
+    "year": 2010,
+    "link": "#"
+  },
+  {
+    "id": 15,
+    "title": "래스터 데이터의 지도대수 분석을 위한 GRASS 기반의 웹시스템 개발",
+    "info": "한국지형공간정보학회지 18(4), 131-139, Dec 2010",
+    "year": 2010,
+    "link": "#"
+  },
+  {
+    "id": 14,
+    "title": "空間統計アプロ-치に基づいたGNSS測位精度向上手法의開發",
+    "info": "GIS-理論と應用 18(2), 73-84, Dec 2010",
+    "year": 2010,
+    "link": "#"
+  },
+  {
+    "id": 13,
+    "title": "구글어스와 공간데이터베이스를 이용한 웹기반 지리정보 표출시스템 개발",
+    "info": "한국공간정보학회지 18(5), 141-149, Oct 2010",
+    "year": 2010,
+    "link": "#"
+  },
+  {
+    "id": 12,
+    "title": "고해상도 위성영상의 토지피복분류와 정확도 비교연구",
+    "info": "한국지리정보학회지 13(1), 89-100, Mar 2010",
+    "year": 2010,
+    "link": "#"
+  },
+  {
+    "id": 11,
+    "title": "A semantic web service for tourism information over the mobile web",
+    "info": "Journal of the Korean Geographical Society 42(5), 788-807, Dec 2007",
+    "year": 2007,
+    "link": "#"
+  },
+  {
+    "id": 10,
+    "title": "Spatiotemporal hotspot detection using G statistics: A case of traffic accidents in East Japan",
+    "info": "Research of Seoul & Other Cities 8(3), 71-83, Sep 2007",
+    "year": 2007,
+    "link": "#"
+  },
+  {
+    "id": 9,
+    "title": "통합 GNSS 환경에서 도시공간 위성측위의 가용성평가 시뮬레이션",
+    "info": "한국측량학회지 25(3), 231-238, Jun 2007",
+    "year": 2007,
+    "link": "#"
+  },
+  {
+    "id": 8,
+    "title": "Visualizing geographical contexts in social networks",
+    "info": "The Journal of Geographic Information System Association of Korea 14(4), 391-401, Dec 2006",
+    "year": 2006,
+    "link": "#"
+  },
+  {
+    "id": 7,
+    "title": "웹 2.0 환경에서 동적상호작용 중심의 시각적 공간자료분석",
+    "info": "국토지리학회지 40(4), 585-594, Dec 2006",
+    "year": 2006,
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "지역분석을 위한 시계열 공간연관성 탐색도구",
+    "info": "한국GIS학회지 14(1), 163-176, Apr 2006",
+    "year": 2006,
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "시간지리학 응용을 위한 시공간데이터베이스 기반의 GIS컴퓨팅 연구",
+    "info": "한국GIS학회지 14(3), 221-237, Nov 2005",
+    "year": 2005,
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "시공간 개인통행자료의 지리적 시각화",
+    "info": "대한지리학회지 40(3), 310-320, Jun 2005",
+    "year": 2005,
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "An integrated approach to the GIS data reengineering for the New Korea Geodetic Datum",
+    "info": "Journal of the Korean Geographical Society 40(2), 153-171, Jun 2005",
+    "year": 2005,
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "무선인터넷 지도서비스를 위한 매핑미들웨어의 설계와 구현",
+    "info": "한국GIS학회지 12(2), 165-179, Jul 2004",
+    "year": 2004,
+    "link": "#"
+  },
+  {
+    "id": 1,
+    "title": "지역분석을 위한 웹기반 통계GIS 연구",
+    "info": "한국GIS학회지 9(2), 239-261, Jul 2001",
+    "year": 2001,
+    "link": "#"
+  }
+]

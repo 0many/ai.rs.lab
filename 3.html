@@ -21,10 +21,13 @@
       .segmented-control {
           display: flex;
           gap: 0.25rem;
+          justify-content: center;
+          width: auto;
+          margin: 0 auto;
       } 
       
       .segmented-control a {
-          flex: 1 1 0;
+          flex: 0 0 auto;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -34,7 +37,7 @@
           transition: all 0.2s ease-in-out;
           color: #e2e8f0;
           white-space: nowrap;
-          min-width: 0;
+          min-width: fit-content;
       }
       
       .dark .segmented-control a {
@@ -471,8 +474,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 <div class="relative z-10 border-b border-gray-200 dark:border-gray-700 bg-black/60 dark:bg-black/60" style="height: 57px;">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
-<nav aria-label="Research Tabs" class="segmented-control flex justify-center max-w-5xl mx-auto w-full">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-center">
+<nav aria-label="Research Tabs" class="segmented-control flex justify-center">
 <a class="group py-2.5" href="#research-area">Research Area</a>
 </nav>
 </div>

@@ -1,0 +1,414 @@
+[ {
+  "id": 59,
+  "title": "AI-Based Time-Series Ensemble Approach Coupled with a Hydrological Model for Reservoir Storage Prediction in Korea",
+  "journal": "water",
+  "year": 2025,
+  "link": "https://doi.org/10.3390/w17223296"
+  },
+  {
+    "id": 58,
+    "title": "Semiautomated sedimentary type classification of seamounts in the Western Pacific using deep-sea camera images",
+    "journal": "Geosciences Journal",
+    "year": 2025,
+    "link": "https://doi.org/10.1007/s12303-025-00049-w"
+  },
+  {
+    "id": 57,
+    "title": "A global perspective on solar-driven hydrogen economy and 2050 carbon neutrality",
+    "journal": "Chemical Engineering Journal",
+    "year": 2025,
+    "link": "https://doi.org/10.1016/j.cej.2025.164144"
+  },
+  {
+    "id": 56,
+    "title": "Estimation of Flood Inundation Area Using Soil Moisture Active Passive Fractional Water Data with an LSTM Model",
+    "journal": "Sensors",
+    "year": 2025,
+    "link": "https://doi.org/10.3390/s25082503"
+  },
+  {
+    "id": 55,
+    "title": "An Adaptive 24 GHz PSO-Based Optimized VCO in Next-Generation Wireless Sensor Networks",
+    "journal": "Applied Sciences",
+    "year": 2025,
+    "link": "https://doi.org/10.3390/app15073692"
+  },
+  {
+    "id": 54,
+    "title": "Real-Time Farm Surveillance Using IoT and YOLOv8 for Animal Intrusion Detection",
+    "journal": "Future Internet",
+    "year": 2025,
+    "link": "https://doi.org/10.3390/fi17020070"
+  },
+  {
+    "id": 53,
+    "title": "AI- and Deep Learning-Powered Driver Drowsiness Detection Method Using Facial Analysis",
+    "journal": "Applied Sciences",
+    "year": 2025,
+    "link": "https://doi.org/10.3390/app15031102"
+  },
+  {
+    "id": 52,
+    "title": "The Intersection of Machine Learning and Wireless Sensor Network Security for Cyber-Attack Detection: A Detailed Analysis",
+    "journal": "Sensors",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/s24196377"
+  },
+  {
+    "id": 51,
+    "title": "an-QNA: An Adaptive Nesterov Quasi-Newton Acceleration-Optimized CMOS LNA for 65 nm Automotive Radar Applications",
+    "journal": "Sensors",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/s24186141"
+  },
+  {
+    "id": 50,
+    "title": "Dual Features, Compact Dimensions and X-Band Applications for the Design and Fabrication of Annular Circular Ring-Based Crescent-Moon-Shaped Microstrip Patch Antenna",
+    "journal": "Micromachines",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/mi15070809"
+  },
+  {
+    "id": 49,
+    "title": "Single-Temporal Sentinel-2 for Analyzing Burned Area Detection Methods: A Study of 14 Cases in Republic of Korea Considering Land Cover",
+    "journal": "Remote Sensing",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/rs16050884"
+  },
+  {
+    "id": 48,
+    "title": "Detection of Floating Algae Blooms on Water Bodies Using PlanetScope Images and Shifted Windows Transformer Model",
+    "journal": "Remote Sensing",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/rs16203791"
+  },
+  {
+    "id": 47,
+    "title": "A Reformed PSO-Based High Linear Optimized Up-Conversion Mixer for Radar Application",
+    "journal": "Sensors",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/s24030879"
+  },
+  {
+    "id": 46,
+    "title": "Spatial Gap-filling of Himawari-8 Hourly AOD Products Using Machine Learning with Model-based AOD and Meteorological Data: A Focus on the Korean Peninsula",
+    "journal": "Remote Sensing",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/rs16234400"
+  },
+  {
+    "id": 45,
+    "title": "Detection of Marine Oil Spill from PlanetScope Images Using CNN and Transformer Models",
+    "journal": "Journal of Marine Science and Engineering",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/jmse12112095"
+  },
+  {
+    "id": 44,
+    "title": "Wildfire Smoke Detection Enhanced by Image Augmentation with StyleGAN2-ADA for YOLOv8 and RT-DETR Models",
+    "journal": "Fire",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/fire7100369"
+  },
+  {
+    "id": 43,
+    "title": "Detection of Floating Algae Blooms on Water Bodies Using PlanetScope Images and Shifted Windows Transformer Model",
+    "journal": "Remote Sensing",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/rs16203791"
+  },
+  {
+    "id": 42,
+    "title": "An Automated Machine Learning Approach to the Retrieval of Daily Soil Moisture in South Korea Using Satellite Images, Meteorological Data, and Digital Elevation Model",
+    "journal": "Water",
+    "year": 2024,
+    "link": "https://doi.org/10.3390/w16182661"
+  },
+  {
+    "id": 41,
+    "title": "Front-End Development for Radar Applications: A Focus on 24 GHz Transmitter Design",
+    "journal": "Sensors",
+    "year": 2023,
+    "link": "https://doi.org/10.3390/s23249704"
+  },
+  {
+    "id": 40,
+    "title": "Real-time retrieval of daily soil moisture using IMERG and GK2A satellite images with NWP and topographic data: A machine learning approach for South Korea",
+    "journal": "Remote Sensing",
+    "year": 2023,
+    "link": "https://doi.org/10.3390/rs15174168"
+  },
+  {
+    "id": 39,
+    "title": "Estimation of high-resolution soil moisture in Canadian croplands using deep neural network with Sentinel-1 and Sentinel-2 images",
+    "journal": "Remote Sensing",
+    "year": 2023,
+    "link": "https://doi.org/10.3390/rs15164063"
+  },
+  {
+    "id": 38,
+    "title": "A novel hemispherical visible light transmitter design for multi-user optical beamforming in wireless communication",
+    "journal": "Optical and Quantum Electronics",
+    "year": 2023,
+    "link": "https://doi.org/10.1007/s11082-023-05183-z"
+  },
+  {
+    "id": 37,
+    "title": "Spatial gap-filling of GK2A daily sea surface temperature (SST) around the Korean Peninsula using meteorological data and regression residual kriging (RRK)",
+    "journal": "Remote Sensing",
+    "year": 2022,
+    "link": "https://doi.org/10.3390/rs14205265"
+  },
+  {
+    "id": 36,
+    "title": "Development of Integrated Crop Drought Index by combining rainfall, land surface temperature, evapotranspiration, soil moisture, and vegetation index for agricultural drought monitoring",
+    "journal": "Remote Sensing",
+    "year": 2021,
+    "link": "https://doi.org/10.3390/rs13091778"
+  },
+  {
+    "id": 35,
+    "title": "Retrieval of daily reference evapotranspiration for croplands in South Korea using machine learning with satellite images and numerical weather prediction data",
+    "journal": "Remote Sensing",
+    "year": 2020,
+    "link": "https://doi.org/10.3390/rs12213642"
+  },
+  {
+    "id": 34,
+    "title": "An artificial intelligence approach to predict gross primary productivity in the forests of South Korea using satellite remote sensing data",
+    "journal": "Forests",
+    "year": 2020,
+    "link": "https://doi.org/10.3390/f11091000"
+  },
+  {
+    "id": 33,
+    "title": "An artificial intelligence approach to prediction of corn yields under extreme weather conditions using satellite and meteorological data",
+    "journal": "Applied Sciences",
+    "year": 2020,
+    "link": "https://doi.org/10.3390/app10113785"
+  },
+  {
+    "id": 32,
+    "title": "Infrared soil moisture retrieval algorithm using temperature-vegetation dryness index and Moderate Resolution Imaging Spectroradiometer data",
+    "journal": "Asia-Pacific Journal of Atmospheric Sciences",
+    "year": 2020,
+    "link": "https://doi.org/10.1007/s13143-020-00174-6"
+  },
+  {
+    "id": 31,
+    "title": "What caused the extraordinarily hot 2018 summer in Korea?",
+    "journal": "Journal of the Meteorological Society of Japan",
+    "year": 2020,
+    "link": "https://doi.org/10.2151/jmsj.2020-009"
+  },
+  {
+    "id": 30,
+    "title": "First-time estimation of HCHO column over Asia using multiple regression with OMI and MODIS data",
+    "journal": "Journal of Environmental Informatics",
+    "year": 2019,
+    "link": "https://doi.org/10.3808/jei.201900412"
+  },
+  {
+    "id": 29,
+    "title": "Different agricultural responses to extreme drought events in neighboring counties of South and North Korea",
+    "journal": "Remote Sensing",
+    "year": 2019,
+    "link": "https://doi.org/10.3390/rs11151773"
+  },
+  {
+    "id": 28,
+    "title": "A comparison between major artificial intelligence methods for crop yield prediction: Case study of the Midwestern United States, 2006-2015",
+    "journal": "ISPRS International Journal of Geo-Information",
+    "year": 2019,
+    "link": "https://doi.org/10.3390/ijgi8050240"
+  },
+  {
+    "id": 27,
+    "title": "Satellite-based prediction of Arctic sea ice concentration using a deep neural network with multi-model ensemble",
+    "journal": "Remote Sensing",
+    "year": 2019,
+    "link": "https://doi.org/10.3390/rs11010019"
+  },
+  {
+    "id": 26,
+    "title": "Satellite-based evaluation of the post-fire recovery process from the worst forest fire case in South Korea",
+    "journal": "Remote Sensing",
+    "year": 2018,
+    "link": "https://doi.org/10.3390/rs10060918"
+  },
+  {
+    "id": 25,
+    "title": "Satellite-based assessment of rapid mega-urban development on agricultural land",
+    "journal": "Journal of Agricultural Meteorology",
+    "year": 2018,
+    "link": "https://doi.org/10.2480/agrmet.D-17-00011"
+  },
+  {
+    "id": 24,
+    "title": "Future changes due to model biases in probabilities of extreme temperatures over East Asia using CMIP5 data",
+    "journal": "International Journal of Climatology",
+    "year": 2018,
+    "link": "https://doi.org/10.1002/joc.5233"
+  },
+  {
+    "id": 23,
+    "title": "A scattering-based over-land rainfall retrieval algorithm for South Korea using GCOM-W1/AMSR-2 data",
+    "journal": "Asia-Pacific Journal of Atmospheric Sciences",
+    "year": 2017,
+    "link": "https://doi.org/10.1007/s13143-017-0041-4"
+  },
+  {
+    "id": 22,
+    "title": "First retrieval of fire radiative power from COMS data using the mid-infrared radiance method",
+    "journal": "Remote Sensing Letters",
+    "year": 2017,
+    "link": "https://doi.org/10.1080/2150704X.2016.1239283"
+  },
+  {
+    "id": 21,
+    "title": "Blending of satellite SST products using ensemble Bayesian model averaging (EBMA)",
+    "journal": "Remote Sensing Letters",
+    "year": 2016,
+    "link": "https://doi.org/10.1080/2150704X.2016.1190473"
+  },
+  {
+    "id": 20,
+    "title": "On the relationships between satellite-based drought index and gross primary production in the North Korean croplands, 2000-2012",
+    "journal": "Remote Sensing Letters",
+    "year": 2016,
+    "link": "https://doi.org/10.1080/2150704X.2016.1187315"
+  },
+  {
+    "id": 19,
+    "title": "Satellite-based assessment of Amazonian surface dryness due to deforestation",
+    "journal": "Remote Sensing Letters",
+    "year": 2016,
+    "link": "https://doi.org/10.1080/2150704X.2015.1109159"
+  },
+  {
+    "id": 18,
+    "title": "The effect of precipitation and air temperature on land-cover change in the Sahel",
+    "journal": "Water and Environment Journal",
+    "year": 2015,
+    "link": "https://doi.org/10.1111/wej.12118"
+  },
+  {
+    "id": 17,
+    "title": "3-D geovisualization of satellite images on smart devices by the integration of spatial DBMS, RESTful API, and WebGL",
+    "journal": "Geocarto International",
+    "year": 2015,
+    "link": "https://doi.org/10.1080/10106049.2014.888485"
+  },
+  {
+    "id": 16,
+    "title": "Assessment of the relationship between thermal-infrared-based temperature-vegetation dryness index and microwave satellite-derived soil moisture",
+    "journal": "Remote Sensing Letters",
+    "year": 2014,
+    "link": "https://doi.org/10.1080/2150704X.2014.950760"
+  },
+  {
+    "id": 15,
+    "title": "Statistical modeling of sea ice concentration using satellite imagery and climate reanalysis data in the Barents and Kara Seas, 1979-2012",
+    "journal": "Remote Sensing",
+    "year": 2014,
+    "link": "https://doi.org/10.3390/rs6065520"
+  },
+  {
+    "id": 14,
+    "title": "Satellite-based assessment of large-scale land cover change in Asian arid regions in the period of 2001-2009",
+    "journal": "Environmental Earth Sciences",
+    "year": 2014,
+    "link": "https://doi.org/10.1007/s12665-013-2778-0"
+  },
+  {
+    "id": 13,
+    "title": "The effect of fractional vegetation cover on the relationship between EVI and soil moisture in non-forest regions",
+    "journal": "Remote Sensing Letters",
+    "year": 2014,
+    "link": "https://doi.org/10.1080/2150704X.2013.866288"
+  },
+  {
+    "id": 12,
+    "title": "Detecting wildfires with the Korean geostationary meteorological satellite",
+    "journal": "Remote Sensing Letters",
+    "year": 2014,
+    "link": "https://doi.org/10.1080/2150704X.2013.862602"
+  },
+  {
+    "id": 11,
+    "title": "GIS mapping of Tsunami vulnerability: Case study of the Jembrana Regency in Bali, Indonesia",
+    "journal": "KSCE Journal of Civil Engineering",
+    "year": 2011,
+    "link": "https://doi.org/10.1007/s12205-011-0741-8"
+  },
+  {
+    "id": 10,
+    "title": "A study on the relationship between Atlantic sea surface temperature and Amazonian greenness",
+    "journal": "Ecological Informatics",
+    "year": 2010,
+    "link": "https://doi.org/10.1016/j.ecoinf.2010.05.005"
+  },
+  {
+    "id": 9,
+    "title": "Mapping the global supply and demand structure of rice",
+    "journal": "Sustainability Science",
+    "year": 2009,
+    "link": "https://doi.org/10.1007/s11625-009-0077-1"
+  },
+  {
+    "id": 8,
+    "title": "Classification of changing regions using a temporal signature of local spatial association",
+    "journal": "Environment and Planning B",
+    "year": 2009,
+    "link": "https://doi.org/10.1068/b34131t"
+  },
+  {
+    "id": 7,
+    "title": "A simulation system for GNSS multipath mitigation using spatial statistical methods",
+    "journal": "Computers & Geosciences",
+    "year": 2008,
+    "link": "https://doi.org/10.1016/j.cageo.2008.01.004"
+  },
+  {
+    "id": 6,
+    "title": "A GIS-based simulation to predict GPS availability along the Tehran Road in Seoul, Korea",
+    "journal": "KSCE Journal of Civil Engineering",
+    "year": 2008,
+    "link": "https://doi.org/10.1007/s12205-008-0401-9"
+  },
+  {
+    "id": 5,
+    "title": "Ajax GIS application for GNSS availability simulation",
+    "journal": "KSCE Journal of Civil Engineering",
+    "year": 2007,
+    "link": "https://doi.org/10.1007/BF02885901"
+  },
+  {
+    "id": 4,
+    "title": "X3D web service using 3D image mosaicing and location-based image indexing",
+    "journal": "Lecture Notes in Computer Science",
+    "year": 2006,
+    "link": "https://doi.org/10.1007/11848035_87"
+  },
+  {
+    "id": 3,
+    "title": "Web-based interactive visualization of 3D video mosaics using X3D standard",
+    "journal": "Journal of Zhejiang University - Science A",
+    "year": 2006,
+    "link": "https://doi.org/10.1631/jzus.2006.A1259"
+  },
+  {
+    "id": 2,
+    "title": "Web-based cluster analysis for the time-series signature of local spatial association",
+    "journal": "Lecture Notes in Computer Science",
+    "year": 2006,
+    "link": "https://doi.org/10.1007/11935148_18"
+  },
+  {
+    "id": 1,
+    "title": "Collaborative GIS environment for exploratory spatial data analysis based on hybrid P2P network",
+    "journal": "Lecture Notes in Computer Science",
+    "year": 2006,
+    "link": "https://doi.org/10.1007/11736639_44"
+  }
+]

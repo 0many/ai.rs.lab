@@ -421,6 +421,15 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+  // 모바일 메뉴 링크 클릭 시 메뉴 자동 닫기
+  const mobileNavLinks = document.querySelectorAll('.mobile-menu-content a[href]');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // 같은 페이지 내 해시 링크인 경우에도 메뉴 닫기
+      closeMobileMenu();
+    });
+  });
 });
 </script>
 <div class="relative w-full overflow-hidden bg-gradient-to-b from-blue-100 to-white dark:from-primary-dark dark:to-background-dark" style="height: 385px;">
@@ -452,174 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="researchers">
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Researchers</h2>
 <div id="researchers-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
-<!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Seoyeon Kim" src="member/증명사진/김형우.png"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Hyungwoo Kim</h4>
-<p class="text-xl text-secondary mt-2">Principal Engineer</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              kalituma@gmail.com
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Jack of all trades</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Jiah Jang" src="member/증명사진/김나리.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Nari Kim</h4>
-<p class="text-xl text-secondary mt-2">Research Professor</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              kimnari@pknu.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI based Predictive Modeling of SM and NEE</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/안지혜.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jihye Ahn</h4>
-<p class="text-xl text-secondary mt-2">Research Professor</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              ongpong@pknu.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Sea Surface Temperature Estimation</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Satellite Image Processing</p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of HyoJu Park" src="member/증명사진/임윤교.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Yungyo Im</h4>
-<p class="text-xl text-secondary mt-2">Researcher</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              dbsry129@pukyong.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Feature Matching</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Seoyeon Kim" src="member/증명사진/김리원.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Riwon Kim</h4>
-<p class="text-xl text-secondary mt-2">Researcher</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              rxwxnee@gmail.com
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Jiah Jang" src="member/증명사진/장지아.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jiah Jang</h4>
-<p class="text-xl text-secondary mt-2">Researcher</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              jangjiah12@gmail.com
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/심재웅.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jaeung Sim</h4>
-<p class="text-xl text-secondary mt-2">Researcher</p>
-<a class="mt-14 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-            tlawodnd1325@naver.com
-              </a>
-<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="https://github.com/simjw0223?tab=repositories" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-accent" viewBox="0 0 16 16">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-</svg>
-            GitHub
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Vision-Language Model</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Computer Vision</p>
-</div>
-</div>
-</div>
+  <!-- 멤버 카드가 여기에 동적으로 생성됩니다 (JSON 파일에서 로드) -->
 </div>
 </section>
 <!-- ==================== Ph.D. Course 섹션 ==================== -->
@@ -627,156 +469,6 @@ document.addEventListener('DOMContentLoaded', function() {
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Ph.D. Course</h2>
 <div id="phd-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/윤유정.png"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Youjeong Youn</h4>
-<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
-<a class="mt-14 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-                dbwjd0757@pukyong.ac.kr
-              </a>
-<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="member/CV/윤유정_CV.pdf" target="_blank">
-<span class="material-symbols-outlined text-base text-accent">description</span>
-                CV
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Advanced AI for Geospatial Data Integrity</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Modeling for Environmental Prediction</p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/강종구.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Jonggu Kang</h4>
-<p class="text-xl text-secondary mt-2">Integrated Ph.D. Candidate</p>
-<a class="mt-14 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-gu7529@pukyong.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Geospatial Feature Detection</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Deep Learning-based Satellite Data Processing
-</p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/김서연.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Seoyeon Kim</h4>
-<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-          ksyvv08@pukyong.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Atmospheric Correction</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/정예민.png"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Yemin Jeong</h4>
-<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-          jym6677@pukyong.ac.kr
-              </a>
-<a class="mt-2 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="https://github.com/Yemin-j?tab=repositories" target="_blank">
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-accent" viewBox="0 0 16 16">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-</svg>
-            GitHub
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Image Process(CV)</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-driven Data Modeling(ML)</p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/김근아.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Geunah Kim</h4>
-<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              talkingphotato@gmail.com
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Spatiotemporal Video Prediction</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden ">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Youjeong Youn" src="member/증명사진/최소연.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Soyeon Choi</h4>
-<p class="text-xl text-secondary mt-2">Ph.D. Candidate</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              unggungqe@gmail.com
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>Synthetic Aperture Radar (SAR) Image Processing</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>AI-based Remote Sensing
-</p>
-</div>
-</div>
-</div>
 </div>
 </section>
 <!-- ==================== M.S. Course 섹션 ==================== -->
@@ -784,52 +476,6 @@ gu7529@pukyong.ac.kr
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">M.S. Course</h2>
 <div id="masters-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of HyoJu Park" src="member/증명사진/박효주.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">HyoJu Park</h4>
-<p class="text-xl text-secondary mt-2">Master's Candidate</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              gywn_1230@pukyong.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<img class="max-w-full max-h-full object-contain" style="pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;" data-alt="Professional headshot of Seoyeon Kim" src="member/증명사진/박재성.jpg"/>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">JaeSeong Park</h4>
-<p class="text-xl text-secondary mt-2">Master's Candidate</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              js513jj@naver.com
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>SAR-EO Data Fusion</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
 </div>
 </section>
 <!-- ==================== Undergraduate Students 섹션 ==================== -->
@@ -837,52 +483,6 @@ gu7529@pukyong.ac.kr
 <h2 class="text-4xl font-bold leading-tight tracking-[-0.015em] text-center mb-16 text-primary-dark dark:text-white">Undergraduate Students</h2>
 <div id="undergrad-container" class="people-grid grid grid-cols-1 md:grid-cols-2 gap-6" style="max-width: 1050px; margin-left: auto; margin-right: auto;">
 <!-- 멤버 카드가 여기에 동적으로 생성됩니다 -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<span class="material-symbols-outlined text-gray-400 dark:text-gray-500" style="font-size: 80px;">person</span>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">DongWoo Ha</h4>
-<p class="text-xl text-secondary mt-2">&nbsp;</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              hdw0415@pukyong.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl border border-gray-200 dark:border-gray-700 px-6 pt-8 pb-6 flex flex-col shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-<div class="flex items-start gap-7">
-<div class="w-40 h-52 flex-shrink-0 ml-2 bg-gray-50 dark:bg-gray-700 flex items-center justify-center overflow-hidden">
-<span class="material-symbols-outlined text-gray-400 dark:text-gray-500" style="font-size: 80px;">person</span>
-</div>
-<div class="flex flex-col flex-grow">
-<h4 class="text-3xl font-bold text-primary-dark dark:text-white mt-3">Suji Lee</h4>
-<p class="text-xl text-secondary mt-2">&nbsp;</p>
-<a class="mt-16 flex items-center gap-1.5 text-sm text-black dark:text-white hover:text-accent transition-colors" href="mailto:jane.doe@example.com">
-<span class="material-symbols-outlined text-base text-accent">mail</span>
-              suzii@pukyong.ac.kr
-              </a>
-</div>
-</div>
-<div class="flex-grow"></div>
-<div class="mt-5 border-t border-dotted border-gray-300 dark:border-gray-600 pt-2 mx-2">
-<p class="text-lg font-medium text-accent mb-2">Research Interests</p>
-<div class="flex flex-col gap-1">
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3">•</span>TBD</p>
-<p class="text-sm text-black dark:text-white font-semibold"><span class="mr-3"></span></p>
-</div>
-</div>
-</div>
 </div>
 </section>
 <!-- ==================== Alumni 섹션 ==================== -->
@@ -894,31 +494,6 @@ gu7529@pukyong.ac.kr
 <hr class="border-t-2 border-gray-300 dark:border-gray-600 mb-4"/>
 <ul id="alumni-phd-list" class="space-y-3 text-lg font-semibold text-text-light dark:text-text-dark">
 <!-- 박사 졸업생 목록이 여기에 동적으로 생성됩니다 -->
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>김나리(2018), 국립부경대학교</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>김대선(2018), 한국해양과학기술원</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>김광진(2020), 지오시스템리서치</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>조성억(2022), 국립부경대학교</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>이수진(2023), 국립농업과학원</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>안지혜(2023), 국립부경대학교</span>
-</li>
-</li>
 </ul>
 </div>
 <div class="mb-12">
@@ -926,50 +501,6 @@ gu7529@pukyong.ac.kr
 <hr class="border-t-2 border-gray-300 dark:border-gray-600 mb-4"/>
 <ul id="alumni-masters-list" class="space-y-3 text-lg font-semibold text-text-light dark:text-text-dark">
 <!-- 석사 졸업생 목록이 여기에 동적으로 생성됩니다 -->
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>이하정(2012), BNK시스템</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>이승록(2012), 지오시스템리서치</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>김  구(2015), 국립환경과학원</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>공인학(2018), 한국국토정보공사</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>김영호(2019), 나라스페이스테크놀로지</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>김지원(2019), CJ 대한통운</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>박성욱(2019), 나라스페이스테크놀로지</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>윤예슬(2020), 나라스페이스테크놀로지</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>조수빈(2022), 나라스페이스테크놀로지</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>박강현(2024), 한국항공우주연구원</span>
-</li>
-<li class="flex items-center">
-<span class="mr-3">•</span>
-<span>서영민(2025), 우주항공청</span>
-</li>
 </ul>
 </div>
 </div>
@@ -1135,3 +666,4 @@ function renderAlumni(alumni) {
   });
 </script>
 </body></html>
+

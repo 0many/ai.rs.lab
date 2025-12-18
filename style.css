@@ -48,11 +48,17 @@
 }
 
 .header .navbar {
-  display: inline-flex;
   gap: 50px;
   flex: 0 0 auto;
   align-items: center;
   position: relative;
+}
+
+/* 데스크톱(>= 1024px)에서만 네비게이션 보이도록 – Tailwind의 hidden/lg:block과 일치 */
+@media (min-width: 1024px) {
+  .header .navbar {
+    display: inline-flex;
+  }
 }
 
 .header .navbar a {
@@ -392,8 +398,8 @@
   margin-top: -1.0px;
   height: 400px;
   width: 100%;
-  max-width: 90%;
-  padding: 0 2%;
+  max-width: 1587px;
+  padding: 0;
   display: flex;
   flex-direction: column;
 }
@@ -450,7 +456,7 @@
   font-size: 14px;
   letter-spacing: 0;
   line-height: 20px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .footer .div {
@@ -495,7 +501,7 @@
   font-size: 14px;
   letter-spacing: 0;
   line-height: 20px;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .footer .horizontal-border {
@@ -526,7 +532,526 @@
   text-align: center;
   letter-spacing: 0;
   line-height: 20px;
-  white-space: nowrap;
+  white-space: normal;
+}
+
+/* 헤더 모바일 반응형 */
+@media (max-width: 640px) {
+  .header .link-AI-RS-lab-logo {
+    margin-left: 16px;
+    width: 200px !important;
+    height: 68px !important;
+  }
+
+  /* 모든 페이지의 메뉴 버튼 우측 이동 */
+  .header #mobile-menu-btn {
+    margin-left: auto !important;
+    margin-right: 16px !important;
+    position: relative !important;
+  }
+
+  /* index.html 모바일 메뉴 버튼 흰색 */
+  .header-home #mobile-menu-btn {
+    color: #ffffff !important;
+  }
+
+  .header-home #mobile-menu-btn:hover {
+    color: #00AEEF !important;
+  }
+
+  /* index.html 모바일 메뉴 불투명한 흰색 배경 */
+  .header-home #mobile-menu {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 9999 !important;
+  }
+
+  .header-home .mobile-menu-content {
+    background-color: #ffffff !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 80% !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+    z-index: 10000 !important;
+  }
+
+  /* nav 영역도 흰색 배경 추가 */
+  .header-home .mobile-menu-content nav {
+    background-color: #ffffff !important;
+    min-height: 100% !important;
+  }
+
+  /* 텍스트 색상 */
+  .header-home .mobile-menu-content .text-xl,
+  .header-home .mobile-menu-content #mobile-menu-close,
+  .header-home .mobile-menu-content .mobile-nav-link,
+  .header-home .mobile-menu-content .mobile-nav-toggle,
+  .header-home .mobile-menu-content .mobile-nav-toggle span,
+  .header-home .mobile-menu-content .material-symbols-outlined {
+    color: #101418 !important;
+  }
+
+  .header-home .mobile-menu-content .mobile-submenu a {
+    color: #4b5563 !important;
+  }
+
+  .header-home .mobile-menu-content .mobile-nav-link:hover,
+  .header-home .mobile-menu-content .mobile-nav-toggle:hover,
+  .header-home .mobile-menu-content #mobile-menu-close:hover {
+    color: #00AEEF !important;
+  }
+
+  .header-home .mobile-menu-content .mobile-submenu a:hover {
+    color: #00AEEF !important;
+  }
+
+  .header-home .mobile-menu-content .border-gray-200 {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* index.html 히어로 섹션 모바일 반응형 */
+  .hero-background {
+    height: 50vh !important;
+    min-height: 400px !important;
+    padding-top: 105px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-position: center center !important;
+  }
+
+  .hero-text-container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-top: -80px !important;
+  }
+
+  .hero-text-container .max-w-5xl {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .hero-main-text {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  .hero-main-text.mt-10 {
+    margin-top: 0.75rem !important;
+  }
+
+  /* index.html About 섹션 이미지 모바일 스타일 - 크기 줄이고 양옆 여백 추가 */
+  .hero-gradient-box img {
+    max-width: 85% !important;
+    width: 85% !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* About/Research 섹션 세로 길이 줄임 */
+  .hero-gradient-box,
+  .hero-gray-box {
+    height: 650px !important;
+  }
+
+  /* About ai.rs.lab과 Research Area 텍스트 한 줄에 맞추기 */
+  .section-title-large {
+    font-size: 1.75rem !important; /* 텍스트 크기 줄임 */
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  /* About/Research 섹션 상단 여백 줄임 */
+  .hero-gradient-box > div {
+    margin-top: 40px !important;
+  }
+
+  /* Research Area 섹션 상단 여백 줄임 */
+  .hero-gray-box > div {
+    margin-top: 20px !important;
+  }
+
+  /* About ai.rs.lab과 View more 사이 여백 줄임 */
+  .hero-gradient-box .flex.flex-col.gap-3,
+  .hero-gray-box .flex.flex-col.gap-3 {
+    gap: 0.5rem !important; /* gap-3에서 gap-2로 */
+  }
+
+  .hero-gradient-box .view-more-btn.mt-4,
+  .hero-gray-box .view-more-btn.mt-4 {
+    margin-top: 0.5rem !important; /* mt-4에서 mt-2로 */
+  }
+
+  /* View more 버튼 크기 줄임 */
+  .view-more-btn {
+    font-size: 0.875rem !important; /* text-sm */
+  }
+
+  .view-more-btn .material-symbols-outlined {
+    font-size: 1.25rem !important; /* text-xl */
+  }
+}
+
+/* 4.html (Professor 페이지) 카드 내부 텍스트 크기 조정 */
+main .max-w-5xl .bg-card-light p.text-xs,
+main .max-w-5xl .bg-card-dark p.text-xs {
+  font-size: 0.875rem !important;
+}
+
+main .max-w-5xl .bg-card-light p.text-sm,
+main .max-w-5xl .bg-card-dark p.text-sm {
+  font-size: 0.875rem !important;
+  white-space: nowrap !important;
+}
+
+/* 4.html (Professor 페이지) 모바일 반응형 */
+@media (max-width: 640px) {
+  /* Professor 카드 모바일 스타일 */
+  main .max-w-5xl .bg-card-light,
+  main .max-w-5xl .bg-card-dark {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Professor 카드 내부 flex 레이아웃을 세로로 변경 */
+  main .max-w-5xl .flex.items-start.gap-8 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Professor 이미지 크기 조정 */
+  main .max-w-5xl .w-44.h-52 {
+    width: 200px !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Professor 정보 텍스트 영역 */
+  main .max-w-5xl .flex-grow {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Professor 이름 크기 조정 */
+  main .max-w-5xl h3.text-4xl {
+    font-size: 1.75rem !important;
+    text-align: center !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Professor 직함 크기 조정 */
+  main .max-w-5xl p.text-xl {
+    font-size: 1.125rem !important;
+    text-align: center !important;
+  }
+
+  /* 연락처 정보 텍스트 줄바꿈 */
+  main .max-w-5xl p.text-gray-700,
+  main .max-w-5xl p.text-gray-300 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* 라벨 텍스트 크기 조정 */
+  main .max-w-5xl p.text-xs {
+    font-size: 0.75rem !important;
+  }
+
+  /* 메인 컨테이너 패딩 조정 */
+  main.w-full.max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* 섹션 제목 크기 조정 */
+  main h2.text-4xl {
+    font-size: 2rem !important;
+  }
+
+  main h3.text-2xl {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* 5.html (Members 페이지) 모바일 반응형 */
+@media (max-width: 640px) {
+  /* 서브탭 모바일 스타일 - 가로 스크롤 가능 */
+  .segmented-control {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .segmented-control::-webkit-scrollbar {
+    height: 4px !important;
+  }
+
+  .segmented-control::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .segmented-control::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-radius: 2px !important;
+  }
+
+  .segmented-control a {
+    flex: 0 0 auto !important;
+    min-width: fit-content !important;
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.8125rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* 서브탭 컨테이너 높이 조정 */
+  .relative.z-10.border-b {
+    height: auto !important;
+    min-height: 57px !important;
+  }
+
+  .relative.z-10.border-b .h-full {
+    height: auto !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* 멤버 카드 모바일 스타일 */
+  .people-grid .bg-card-light,
+  .people-grid .bg-card-dark {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* 멤버 카드 내부 flex 레이아웃을 세로로 변경 */
+  .people-grid .flex.items-start.gap-7 {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1rem !important;
+  }
+
+  /* 멤버 이미지 크기 조정 */
+  .people-grid .w-40.h-52 {
+    width: 180px !important;
+    height: auto !important;
+    max-height: 220px !important;
+    margin-left: 0 !important;
+  }
+
+  /* 멤버 정보 텍스트 영역 */
+  .people-grid .flex-grow {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* 멤버 이름 크기 조정 */
+  .people-grid h4.text-3xl {
+    font-size: 1.5rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* 멤버 타이틀 크기 조정 */
+  .people-grid p.text-xl {
+    font-size: 1rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* 이메일, GitHub, CV 링크 텍스트 줄바꿈 */
+  .people-grid a.text-sm {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    font-size: 0.875rem !important;
+    justify-content: center !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Research Interests 섹션 */
+  .people-grid .border-t {
+    margin-top: 1rem !important;
+    padding-top: 0.75rem !important;
+  }
+
+  .people-grid p.text-lg {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  .people-grid p.text-sm {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: 0.75rem !important;
+    text-align: left !important;
+  }
+
+  /* 메인 컨테이너 패딩 조정 */
+  main.w-full.max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* 섹션 제목 크기 조정 */
+  section h2.text-4xl {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  /* Alumni 섹션 스타일 */
+  section#alumni h3.text-2xl {
+    font-size: 1.25rem !important;
+  }
+
+  section#alumni ul.text-lg {
+    font-size: 1rem !important;
+  }
+
+  section#alumni li {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+  }
+
+  /* 그리드 간격 조정 */
+  .people-grid {
+    gap: 1rem !important;
+  }
+}
+
+/* 푸터 모바일 반응형 */
+@media (max-width: 640px) {
+  .footer .container {
+    max-width: 100%;
+    height: auto;
+    padding: 24px 16px 32px;
+    box-sizing: border-box;
+  }
+
+  /* 모바일에서 로고 숨기기 */
+  .footer .ai-rs-lab-logo {
+    display: none;
+  }
+
+  .footer .frame {
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-top: 0;
+    height: auto !important;
+    box-sizing: border-box;
+  }
+
+  .footer .frame {
+    gap: 2px !important;
+  }
+
+  .footer .heading-address {
+    white-space: normal !important;
+    width: 100%;
+    display: block;
+    font-size: 11px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .footer .text-wrapper {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100%;
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: left;
+    height: auto !important;
+    margin: 2px 0 !important;
+    box-sizing: border-box;
+    font-size: 11px !important;
+  }
+
+  .footer .div {
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-top: 8px !important;
+    height: auto !important;
+    gap: 2px !important;
+    box-sizing: border-box;
+  }
+
+  .footer .heading-contact {
+    white-space: normal !important;
+    display: block;
+    height: auto;
+    font-size: 11px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .footer .text-wrapper-2 {
+    display: block !important;
+    width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    height: auto !important;
+    margin: 2px 0 !important;
+    box-sizing: border-box;
+    font-size: 11px !important;
+  }
+
+  .footer .horizontal-border {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 24px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .footer .p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin-left: 0 !important;
+    text-align: center;
+    white-space: normal !important;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    height: auto !important;
+    box-sizing: border-box;
+    font-size: 11px !important;
+  }
 }
 
 /* Index hero 아래 그라디언트 박스 */
@@ -616,5 +1141,326 @@
 
 .research-next {
   right: -3rem;
+}
+
+/* 3.html Research Area 카드 모바일 반응형 */
+@media (max-width: 640px) {
+  /* Research Area 카드 컨테이너를 세로로 변경 */
+  section#research-area .max-w-4xl.flex {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+    padding: 0 1rem !important;
+  }
+
+  /* Research 카드 크기 조정 */
+  section#research-area .research-card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  section#research-area .research-card img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Research 카드 텍스트 크기 조정 */
+  section#research-area .research-card p {
+    font-size: 1.75rem !important;
+    top: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* View More 버튼 크기 조정 */
+  section#research-area .research-card .view-more {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 1rem !important;
+    bottom: 1rem !important;
+    left: 1rem !important;
+  }
+}
+
+/* 3-1.html, 3-2.html, 3-3.html journal-tabs 모바일 반응형 */
+@media (max-width: 640px) {
+  /* journal-tabs 모바일 스타일 - 세로 배치 */
+  .journal-tabs {
+    min-width: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    padding: 0.25rem !important;
+    margin: 0 auto 1rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .journal-tabs button {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    border-radius: 0.375rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* 섹션 제목 크기 조정 */
+  section#research-area h2.text-4xl {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* 컨테이너 패딩 조정 - 슬라이드를 위해 최소화 */
+  section#research-area .mx-auto.px-4 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* journal-content 패딩 조정 */
+  .journal-content {
+    padding-top: 1.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 슬라이드 컨테이너 패딩 제거 */
+  .journal-content .flex.justify-center {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 슬라이드 크기 조정 - 모바일에서 더 크게 */
+  .research-slider-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .research-slide {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .research-slide img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* 슬라이드 버튼 크기 조정 - 모바일에서 더 작게 */
+  .research-slide-btn {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+    font-size: 0.75rem !important;
+    padding: 0 !important;
+  }
+
+  .research-prev {
+    left: 0.25rem !important;
+  }
+
+  .research-next {
+    right: 0.25rem !important;
+  }
+}
+
+/* 6.html 페이지네이션 모바일 반응형 */
+@media (max-width: 640px) {
+  /* 페이지네이션 가로 스크롤 가능 */
+  .pagination {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: thin !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 0.25rem !important;
+    padding: 0.5rem 0 !important;
+    margin-top: 2rem !important;
+  }
+
+  .pagination::-webkit-scrollbar {
+    height: 4px !important;
+  }
+
+  .pagination::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .pagination::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 2px !important;
+  }
+
+  .pagination button {
+    flex: 0 0 auto !important;
+    padding: 0.5rem 0.5rem !important;
+    font-size: 0.75rem !important;
+    white-space: nowrap !important;
+    min-width: fit-content !important;
+  }
+
+  /* Previous/Next 버튼 텍스트 크기 조정 */
+  .pagination button:first-child,
+  .pagination button:last-child {
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  /* 저널 목록 텍스트 줄바꿈 및 레이아웃 조정 */
+  .paper-item {
+    flex-direction: column !important;
+    padding-bottom: 1rem !important;
+  }
+
+  .paper-item .flex.items-start {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .paper-item .flex-grow {
+    width: 100% !important;
+  }
+
+  .paper-item h4 {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .paper-item p {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 링크 위치 조정 - absolute에서 relative로 변경 */
+  .paper-item a {
+    position: relative !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin-top: 0.5rem !important;
+    align-self: flex-start !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* 논문 번호 위치 조정 */
+  .paper-item span.text-base {
+    align-self: flex-start !important;
+  }
+}
+
+/* 7.html (News 페이지) 모바일 반응형 */
+@media (max-width: 640px) {
+  /* 테이블을 카드 형식으로 변경 */
+  table.w-full {
+    display: block !important;
+  }
+
+  table.w-full thead {
+    display: none !important;
+  }
+
+  table.w-full tbody {
+    display: block !important;
+  }
+
+  table.w-full tbody tr {
+    display: none !important;
+  }
+
+  table.w-full tbody tr.news-item.visible {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.625rem !important;
+    background-color: #ffffff !important;
+  }
+
+  table.w-full tbody td {
+    display: block !important;
+    padding: 0.25rem 0 !important;
+    text-align: left !important;
+    border: none !important;
+    width: 100% !important;
+  }
+
+  /* 번호 스타일 */
+  table.w-full tbody td:first-child {
+    font-weight: 700 !important;
+    color: #00AEEF !important;
+    font-size: 0.875rem !important;
+    margin-bottom: 0.125rem !important;
+  }
+
+  /* 제목 스타일 */
+  table.w-full tbody td:nth-child(2) {
+    font-size: 0.9375rem !important;
+    font-weight: 500 !important;
+    line-height: 1.35 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    margin-bottom: 0.375rem !important;
+    padding-right: 0 !important;
+  }
+
+  /* 링크 스타일 */
+  table.w-full tbody td:nth-child(3) {
+    display: none !important;
+  }
+
+  /* 날짜 스타일 */
+  table.w-full tbody td:last-child {
+    font-size: 0.8125rem !important;
+    color: #6b7280 !important;
+    text-align: left !important;
+    margin-top: 0.125rem !important;
+  }
+
+  /* 테이블 컨테이너 패딩 조정 */
+  .bg-card-light.dark\\:bg-card-dark {
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  /* 메인 컨테이너 패딩 조정 */
+  main.w-full.max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* 섹션 제목 크기 조정 */
+  main h2.text-4xl {
+    font-size: 2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* 2.html Contact 섹션 세부 텍스트 크기 조정 */
+section#contact .text-gray-700,
+section#contact .text-gray-300 {
+  font-size: 0.875rem !important;
+}
+
+section#contact a.text-gray-700,
+section#contact a.text-gray-300 {
+  font-size: 0.875rem !important;
 }
 

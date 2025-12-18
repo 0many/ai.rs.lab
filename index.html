@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuContent = mobileMenu.querySelector('.mobile-menu-content');
   
   function openMobileMenu() {
+    document.body.style.overflow = 'hidden';
     mobileMenu.classList.remove('invisible', 'opacity-0');
     setTimeout(() => {
       mobileMenuContent.classList.remove('translate-x-full');
@@ -215,6 +216,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenuContent.classList.add('translate-x-full');
     setTimeout(() => {
       mobileMenu.classList.add('invisible', 'opacity-0');
+      document.body.style.overflow = '';
     }, 300);
   }
   
@@ -265,8 +267,8 @@ document.addEventListener('DOMContentLoaded', function() {
       <p class="hero-main-text text-3xl md:text-[4.5rem] lg:text-[4.5rem] mt-10">
         <span style="color:#00AEEF;">Lab</span>oratory
       </p>
-    </div>
-  </div>
+</div>
+</div>
   
 </div>
 </div>
@@ -296,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
         Interpreting the Earth and Predicting the Future with AI
       </p>
       
-    </div>
+</div>
     
     <!-- 이미지 -->
     <div class="w-full flex justify-center mt-16">
@@ -304,9 +306,9 @@ document.addEventListener('DOMContentLoaded', function() {
            alt="About ai.rs illustration" 
            class="w-full max-w-3xl h-auto"
            oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;">
-    </div>
+</div>
     
-  </div>
+</div>
 </div>
 <!-- ==================== Research Area 섹션 ==================== -->
 <div class="hero-gray-box flex items-start">
@@ -328,9 +330,9 @@ document.addEventListener('DOMContentLoaded', function() {
         </a>
       </div>
       
-    </div>
+</div>
     
-  </div>
+</div>
 </div>
 
 </main>
