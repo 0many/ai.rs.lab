@@ -371,4 +371,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 </script>
+<!-- 스크롤 투 탑 버튼 -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="맨 위로">
+  <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+  // 스크롤 투 탑 버튼
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    
+    // 스크롤 시 버튼 표시/숨김
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+    
+    // 버튼 클릭 시 맨 위로 스크롤
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 </body></html>

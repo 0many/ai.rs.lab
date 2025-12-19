@@ -502,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <a href="3-3.html#sub3-3" class="research-card relative">
 <img src="area/test_logox.png" alt="Geospatial Data Fusion" class="h-auto" style="max-width: 28rem; pointer-events: none; user-select: none; -webkit-user-select: none; -moz-user-select: none;" oncontextmenu="return false;" ondragstart="return false;" onselectstart="return false;"/>
 <div class="gradient-overlay absolute inset-0 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
-<p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">Geospatial Data Fusion(test)</p>
+<p class="absolute top-7 left-7 text-white text-4xl font-semibold pointer-events-none" style="font-family: Georgia, serif;">Geospatial Data Fusion</p>
 <span class="view-more pointer-events-none">View More</span>
 </a>
 </div>
@@ -540,6 +540,33 @@ document.addEventListener('DOMContentLoaded', function() {
           dropdown.style.opacity = '0';
           dropdown.style.visibility = 'hidden';
         }
+      });
+    });
+  });
+</script>
+<!-- 스크롤 투 탑 버튼 -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="맨 위로">
+  <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+  // 스크롤 투 탑 버튼
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    
+    // 스크롤 시 버튼 표시/숨김
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+    
+    // 버튼 클릭 시 맨 위로 스크롤
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   });

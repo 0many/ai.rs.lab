@@ -716,6 +716,12 @@ main .max-w-5xl .bg-card-dark p.text-sm {
   white-space: nowrap !important;
 }
 
+/* 4.html (Professor 페이지) 데스크탑: 주소를 1줄로 표시 (모든 br 태그 숨기기) */
+main .max-w-5xl p.text-gray-700 br,
+main .max-w-5xl p.text-gray-300 br {
+  display: none !important;
+}
+
 /* 4.html (Professor 페이지) 모바일 반응형 */
 @media (max-width: 640px) {
   /* Professor 카드 모바일 스타일 */
@@ -773,6 +779,18 @@ main .max-w-5xl .bg-card-dark p.text-sm {
     word-break: break-word !important;
     white-space: normal !important;
     font-size: 0.875rem !important;
+  }
+
+  /* 모바일에서 주소의 br 태그 보이기 (3줄로 표시) */
+  main .max-w-5xl p.text-gray-700 br,
+  main .max-w-5xl p.text-gray-300 br {
+    display: block !important;
+  }
+  
+  /* 모바일에서 두 번째 br도 명시적으로 보이기 */
+  main .max-w-5xl p.text-gray-700 br:nth-of-type(2),
+  main .max-w-5xl p.text-gray-300 br:nth-of-type(2) {
+    display: block !important;
   }
 
   /* 라벨 텍스트 크기 조정 */
@@ -1275,15 +1293,22 @@ main .max-w-5xl .bg-card-dark p.text-sm {
 @media (max-width: 640px) {
   /* 페이지네이션 가로 스크롤 가능 */
   .pagination {
+    display: flex !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     -webkit-overflow-scrolling: touch !important;
     scrollbar-width: thin !important;
     flex-wrap: nowrap !important;
     justify-content: center !important;
-    gap: 0.25rem !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 0.0625rem !important;
     padding: 0.5rem 0 !important;
     margin-top: 2rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
   }
 
   .pagination::-webkit-scrollbar {
@@ -1301,17 +1326,27 @@ main .max-w-5xl .bg-card-dark p.text-sm {
 
   .pagination button {
     flex: 0 0 auto !important;
-    padding: 0.5rem 0.5rem !important;
+    padding: 0.5rem 0.375rem !important;
     font-size: 0.75rem !important;
     white-space: nowrap !important;
     min-width: fit-content !important;
   }
 
-  /* Previous/Next 버튼 텍스트 크기 조정 */
+  /* Previous/Next 버튼 텍스트 크기 조정 및 너비 균형 맞추기 */
   .pagination button:first-child,
   .pagination button:last-child {
-    font-size: 0.75rem !important;
-    padding: 0.5rem 0.75rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.5rem 0.5rem !important;
+    min-width: fit-content !important;
+    max-width: none !important;
+    text-align: center !important;
+    flex: 0 0 auto !important;
+  }
+  
+  /* 페이지 번호 버튼들도 동일한 너비로 맞춰서 중앙 정렬 개선 */
+  .pagination button:not(:first-child):not(:last-child) {
+    min-width: 40px !important;
+    text-align: center !important;
   }
 
   /* 저널 목록 텍스트 줄바꿈 및 레이아웃 조정 */
@@ -1366,9 +1401,31 @@ main .max-w-5xl .bg-card-dark p.text-sm {
 
 /* 7.html (News 페이지) 모바일 반응형 */
 @media (max-width: 640px) {
+  /* 테이블을 감싸는 컨테이너 박스 제거 (모바일) */
+  div.bg-card-light {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .dark div.bg-card-light {
+    background-color: transparent !important;
+  }
+  
+  /* Tailwind의 dark:bg-card-dark 클래스도 처리 */
+  .dark div[class*="bg-card-dark"] {
+    background-color: transparent !important;
+  }
+  
   /* 테이블을 카드 형식으로 변경 */
   table.w-full {
     display: block !important;
+    background-color: #f5f7f8 !important;
+  }
+  
+  .dark table.w-full {
+    background-color: #0f1923 !important;
   }
 
   table.w-full thead {
@@ -1390,6 +1447,28 @@ main .max-w-5xl .bg-card-dark p.text-sm {
     border-radius: 0.5rem !important;
     padding: 0.625rem !important;
     background-color: #ffffff !important;
+    min-height: 120px !important;
+    height: auto !important;
+  }
+  
+  .dark table.w-full tbody tr.news-item.visible {
+    background-color: #1a2c3e !important;
+  }
+  
+  /* 카드 사이 간격이 배경색으로 보이도록 tbody 배경색 설정 */
+  table.w-full tbody {
+    background-color: #f5f7f8 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .dark table.w-full tbody {
+    background-color: #0f1923 !important;
+  }
+  
+  /* 마지막 카드의 margin-bottom 제거 */
+  table.w-full tbody tr.news-item.visible:last-child {
+    margin-bottom: 0 !important;
   }
 
   table.w-full tbody td {
@@ -1444,6 +1523,11 @@ main .max-w-5xl .bg-card-dark p.text-sm {
   main.w-full.max-w-7xl {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+    background-color: #f5f7f8 !important;
+  }
+  
+  .dark main.w-full.max-w-7xl {
+    background-color: #0f1923 !important;
   }
 
   /* 섹션 제목 크기 조정 */
@@ -1462,5 +1546,56 @@ section#contact .text-gray-300 {
 section#contact a.text-gray-700,
 section#contact a.text-gray-300 {
   font-size: 0.875rem !important;
+}
+
+/* 스크롤 투 탑 버튼 */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: #00AEEF;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-size: 1.5rem;
+}
+
+.scroll-to-top:hover {
+  background-color: #0099d6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+
+.scroll-to-top.show {
+  display: flex;
+}
+
+/* 모바일 스크롤 투 탑 버튼 */
+@media (max-width: 640px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+  }
+  
+  .scroll-to-top:hover {
+    opacity: 1;
+  }
 }
 

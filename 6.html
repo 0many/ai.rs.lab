@@ -628,16 +628,92 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         pagDiv.appendChild(prevBtn);
 
-        // 페이지 번호 버튼들
-        for (let i = 1; i <= totalPages; i++) {
-            const btn = document.createElement('button');
-            btn.innerText = i;
-            btn.className = (i === currentPage) ? 'active' : '';
-            btn.onclick = () => {
-                currentPage = i;
-                updatePage(container, papers, pagDiv);
-            };
-            pagDiv.appendChild(btn);
+        // 페이지 번호 버튼들 (최대 5개만 표시)
+        const isMobile = window.innerWidth <= 640;
+        const maxVisiblePages = 5;
+        
+        if (isMobile) {
+            // 모바일: ... 없이 현재 페이지 기준으로 최대 5개만 표시
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            // 끝에서 시작하는 경우 조정
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // 페이지 번호들만 표시
+            for (let i = startPage; i <= endPage; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = (i === currentPage) ? 'active' : '';
+                btn.onclick = () => {
+                    currentPage = i;
+                    updatePage(container, papers, pagDiv);
+                };
+                pagDiv.appendChild(btn);
+            }
+        } else {
+            // 데스크탑: 첫 페이지, 마지막 페이지, ... 표시 포함
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            // 끝에서 시작하는 경우 조정
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // 첫 페이지
+            if (startPage > 1) {
+                const btn1 = document.createElement('button');
+                btn1.innerText = '1';
+                btn1.className = (1 === currentPage) ? 'active' : '';
+                btn1.onclick = () => {
+                    currentPage = 1;
+                    updatePage(container, papers, pagDiv);
+                };
+                pagDiv.appendChild(btn1);
+                
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.innerText = '...';
+                    ellipsis.style.padding = '0 0.25rem';
+                    ellipsis.style.color = '#6b7280';
+                    pagDiv.appendChild(ellipsis);
+                }
+            }
+            
+            // 중간 페이지들
+            for (let i = startPage; i <= endPage; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = (i === currentPage) ? 'active' : '';
+                btn.onclick = () => {
+                    currentPage = i;
+                    updatePage(container, papers, pagDiv);
+                };
+                pagDiv.appendChild(btn);
+            }
+            
+            // 마지막 페이지
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.innerText = '...';
+                    ellipsis.style.padding = '0 0.25rem';
+                    ellipsis.style.color = '#6b7280';
+                    pagDiv.appendChild(ellipsis);
+                }
+                
+                const btnLast = document.createElement('button');
+                btnLast.innerText = totalPages;
+                btnLast.className = (totalPages === currentPage) ? 'active' : '';
+                btnLast.onclick = () => {
+                    currentPage = totalPages;
+                    updatePage(container, papers, pagDiv);
+                };
+                pagDiv.appendChild(btnLast);
+            }
         }
 
         // Next → 버튼
@@ -661,16 +737,106 @@ document.addEventListener('DOMContentLoaded', function() {
 
         papers.forEach((p, idx) => p.classList.toggle('visible', idx >= start && idx < end));
 
+        // 페이지 번호 버튼들 다시 렌더링
         const buttons = pagDiv.querySelectorAll('button');
         const prevBtn = buttons[0];
         const nextBtn = buttons[buttons.length - 1];
-
-        // 번호 버튼들(active 표시)
+        
+        // 페이지 번호 버튼들과 ellipsis 제거
         buttons.forEach((b, idx) => {
-            if (idx === 0 || idx === buttons.length - 1) return; // prev / next 건너뜀
-            const pageNumber = parseInt(b.innerText, 10);
-            b.classList.toggle('active', pageNumber === currentPage);
+            if (idx !== 0 && idx !== buttons.length - 1) {
+                b.remove();
+            }
         });
+        pagDiv.querySelectorAll('span').forEach(s => s.remove());
+        
+        // 페이지 번호 버튼들 다시 생성 (최대 5개만 표시)
+        const isMobile = window.innerWidth <= 640;
+        const maxVisiblePages = 5;
+        
+        if (isMobile) {
+            // 모바일: ... 없이 현재 페이지 기준으로 최대 5개만 표시
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            // 끝에서 시작하는 경우 조정
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // 페이지 번호들만 표시
+            for (let i = startPage; i <= endPage; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = (i === currentPage) ? 'active' : '';
+                btn.onclick = () => {
+                    currentPage = i;
+                    updatePage(container, papers, pagDiv);
+                };
+                nextBtn.before(btn);
+            }
+        } else {
+            // 데스크탑: 첫 페이지, 마지막 페이지, ... 표시 포함
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            // 끝에서 시작하는 경우 조정
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // 첫 페이지
+            if (startPage > 1) {
+                const btn1 = document.createElement('button');
+                btn1.innerText = '1';
+                btn1.className = (1 === currentPage) ? 'active' : '';
+                btn1.onclick = () => {
+                    currentPage = 1;
+                    updatePage(container, papers, pagDiv);
+                };
+                prevBtn.after(btn1);
+                
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.innerText = '...';
+                    ellipsis.style.padding = '0 0.25rem';
+                    ellipsis.style.color = '#6b7280';
+                    prevBtn.after(ellipsis);
+                }
+            }
+            
+            // 중간 페이지들
+            for (let i = startPage; i <= endPage; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = (i === currentPage) ? 'active' : '';
+                btn.onclick = () => {
+                    currentPage = i;
+                    updatePage(container, papers, pagDiv);
+                };
+                nextBtn.before(btn);
+            }
+            
+            // 마지막 페이지
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.innerText = '...';
+                    ellipsis.style.padding = '0 0.25rem';
+                    ellipsis.style.color = '#6b7280';
+                    nextBtn.before(ellipsis);
+                }
+                
+                const btnLast = document.createElement('button');
+                btnLast.innerText = totalPages;
+                btnLast.className = (totalPages === currentPage) ? 'active' : '';
+                btnLast.onclick = () => {
+                    currentPage = totalPages;
+                    updatePage(container, papers, pagDiv);
+                };
+                nextBtn.before(btnLast);
+            }
+        }
 
         // Prev / Next 활성/비활성
         prevBtn.disabled = currentPage === 1;
@@ -702,6 +868,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
         window.addEventListener('hashchange', handleHash);
         handleHash();
+  });
+</script>
+<!-- 스크롤 투 탑 버튼 -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="맨 위로">
+  <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+  // 스크롤 투 탑 버튼
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    
+    // 스크롤 시 버튼 표시/숨김
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+    
+    // 버튼 클릭 시 맨 위로 스크롤
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   });
 </script>
 </body></html>

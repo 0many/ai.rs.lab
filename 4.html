@@ -409,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <span class="material-symbols-outlined text-lg text-accent">business</span>
 <p class="font-semibold text-accent uppercase text-xs">OFFICE</p>
 </div>
-<p class="text-gray-700 dark:text-gray-300 text-sm">Pukyong National University B14, Room 613<br/>45 Yongso-ro, Nam-gu, Busan 48513<br/>Republic of Korea</p>
+<p class="text-gray-700 dark:text-gray-300 text-sm">Pukyong National University B14, Room 613,<br/>45 Yongso-ro, Nam-gu, Busan, Republic of Korea</p>
 </div>
 <div>
 <div class="flex items-center gap-2 mb-1">
@@ -525,6 +525,33 @@ document.addEventListener('DOMContentLoaded', function() {
           dropdown.style.opacity = '0';
           dropdown.style.visibility = 'hidden';
         }
+      });
+    });
+  });
+</script>
+<!-- 스크롤 투 탑 버튼 -->
+<button id="scroll-to-top" class="scroll-to-top" aria-label="맨 위로">
+  <span class="material-symbols-outlined">arrow_upward</span>
+</button>
+<script>
+  // 스크롤 투 탑 버튼
+  document.addEventListener('DOMContentLoaded', function() {
+    const scrollBtn = document.getElementById('scroll-to-top');
+    
+    // 스크롤 시 버튼 표시/숨김
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollBtn.classList.add('show');
+      } else {
+        scrollBtn.classList.remove('show');
+      }
+    });
+    
+    // 버튼 클릭 시 맨 위로 스크롤
+    scrollBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
   });
